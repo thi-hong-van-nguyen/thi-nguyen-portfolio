@@ -1,5 +1,35 @@
-.home {
-    max-width: $desktop-size;
-    border: solid red 1px;
-    color: red;
+@import 'config';
+
+.home-wrapper {
+    max-width: $large-desktop-size;
+    margin: auto;
+    border: purple solid 1px;
+};
+
+.about-me-section {
+    border: purple solid 1px;
+    padding: 3% 0;
+    @include flex-row;
+
+    .bio {
+        line-height: 30px;
+        h2 {
+            font-size: 4rem;
+        };
+        div a {
+            color: $dark-mode-primary-color;
+        }
+    }
+
+    .avatar {
+        width: 40%;
+        border: purple solid 1px;
+        padding-right: 20%;
+        img {
+            width: 400px;
+            height: 300px;
+            object-fit: cover;
+            object-position: 50% 30%;
+        }
+    }
 }

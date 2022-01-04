@@ -1,0 +1,65 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: 'Prompt', sans-serif;
+  font-weight: lighter;
+}
+
+h1, h2, h3 {
+  font-weight: bold;
+}
+
+a {
+  text-decoration: none;
+}
+
+.home-wrapper {
+  max-width: 1300px;
+  margin: auto;
+  border: purple solid 1px;
+}
+
+.about-me-section {
+  border: purple solid 1px;
+  padding: 3% 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+.about-me-section .bio {
+  line-height: 30px;
+}
+
+.about-me-section .bio h2 {
+  font-size: 4rem;
+}
+
+.about-me-section .bio div a {
+  color: #00916e;
+}
+
+.about-me-section .avatar {
+  width: 40%;
+  border: purple solid 1px;
+  padding-right: 20%;
+}
+
+.about-me-section .avatar img {
+  width: 400px;
+  height: 300px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 50% 30%;
+     object-position: 50% 30%;
+}
+/*# sourceMappingURL=home.css.map */

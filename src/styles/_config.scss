@@ -1,10 +1,10 @@
+$dark-green: #114d3f;
 $dark-mode-bg: #161925;
-$light-mode-bg: #fff;
+$light-mode-bg: rgb(238, 236, 236);
 $dark-mode-header-bg: #1b2a41;
 $light-mode-header-bg: #00916e;
 $dark-mode-primary-color: #00916e;
-
-$desktop-size: 990px;
+$large-desktop-size: 1300px;
 
 $border-radius: (
     'image': 100%,
@@ -28,6 +28,10 @@ $font-weight: (
 h1, h2, h3 {
     font-weight: bold;
 };
+
+a {
+    text-decoration: none;
+}
 
 @mixin transition-ease {
     transition: all 0.3s ease-in-out;

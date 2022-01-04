@@ -1,10 +1,9 @@
-@import 'config';
-@import 'home';
+@import "config";
+@import "home";
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,400;0,700;1,400;1,700&family=Prompt:ital,wght@0,300;0,400;0,700;1,400;1,700&family=Varela+Round&display=swap');
 
-
 .btn {
-    margin: 5%;
+    margin: 5% 0;
     text-transform: capitalize;
     background: $dark-mode-primary-color;
     border: solid 1px $dark-mode-primary-color;
@@ -81,7 +80,6 @@ header {
                     }
                 }
                 .light {
-                    // color: red !important;
                     color: set-text-color($dark-mode-bg) !important;
                 }
             }
@@ -99,7 +97,6 @@ header {
             padding: 0 0 0 5%;
             a {
                 color: #d3d3d3;
-                text-decoration: none;
                 text-transform: capitalize;
                 padding: 3%;
                 font-weight: map-get($font-weight, 'bold');
@@ -115,7 +112,7 @@ header {
                 }
             };
             .light {
-                color: #114d3f;
+                color: $dark-green;
             }
             .dark {
                 color: $dark-mode-primary-color;
@@ -123,12 +120,12 @@ header {
         }
 
         .hiremeBtn-light {
-            background: #114d3f !important;
+            background: $dark-green !important;
 
         }
     }
 
-    &__dark-mode{
+    &__dark-mode {
         @include flex-col();
         padding: 10%;
 
@@ -186,16 +183,16 @@ header {
     to {
       text-shadow: 0 0 15px #fff, 0 0 20px #57cc99, 0 0 25px #57cc99, 0 0 30px #57cc99, 0 0 35px #57cc99, 0 0 40px #57cc99, 0 0 45px #57cc99;
     }
-  }
+}
 
 ///////////////////////////////////////////////////////////
 ////////////////////           MAIN         ///////////////
 ///////////////////////////////////////////////////////////
 main {
     width: 100%;
-    border: solid red 1px;
-    margin: 0 auto;
+    border: solid purple 1px;
 }
+
 
 ///////////////////////////////////////////////////////////
 ////////////////////         FOOTER         ///////////////

@@ -13,6 +13,7 @@ import antdesign from '../../photos/antdesign.png'
 import rupikaur from '../../photos/rupikaur.PNG'
 import coderheroes from '../../photos/coderheroes.PNG'
 import anywherefitness from '../../photos/anywherefitness.PNG'
+import bio2 from '../../photos/bio2.jpg'
 import { getActiveKey } from '../../redux/actions'
 
 function Home(props) {
@@ -30,12 +31,27 @@ function Home(props) {
     console.log('home renders')
 
     return (
-        <div className='home'>
+        <div className='home-wrapper'>
             <section className='about-me-section'>
-                <h2>Thi Nguyen</h2>
-                <div>Full Stack Web Developer</div>
-                <div>
-                    I'm a web developer specialized in both front end and back end for modern web apps. Want to know about my project? Check out my <Link to='/portfolio'>portfolio</Link> and <Link to='/resume'>online resume</Link>
+                <div className='bio'>
+                    <h2>Thi Nguyen</h2>
+                    <div>Full Stack Web Developer</div>
+                    <div>
+                        I'm a web developer specialized in both front end and back end for modern web apps. Want to know about my project? Check out my <Link to='/portfolio'>portfolio</Link> and <Link to='/resume'>online resume</Link>
+                    </div>
+                    <div>
+                        <button type="button" class="btn btn-primary">
+                            <i class="fas fa-arrow-circle-right"></i>
+                            view portfolio
+                        </button>
+                        <button type="button" class="btn btn-secondary">
+                            <i class="fas fa-file-alt"></i>
+                            view resume
+                        </button>
+                    </div>
+                </div>
+                <div className='avatar'>
+                    <img src={bio2} alt='avatar' />
                 </div>
             </section>
             <section>
