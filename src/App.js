@@ -1,25 +1,43 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { Routes, Route } from 'react-router-dom'
+import { connect } from 'react-redux'
 
-function App() {
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Home from './components/Home'
+import Portfolio from './components/Portfolio'
+import Resume from './components/Resume'
+import ContactMe from './components/ContactMe'
+
+import './styles/App.css'
+
+function App(props) {
+  const { darkMode } = props
+
+  console.log('app redners')
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={`App ${darkMode === 'dark' ? 'dark-mode' : 'light-mode'}`}>
+      <Header />
+      <div className='main-wrapper'>
+        <main>
+          <Routes>
+            <Route path='/portfolio' element={<Portfolio />} />
+            <Route path='/resume' element={<Resume />} />
+            <Route path='/contact-me' element={<ContactMe />} />
+            <Route exact path='/' element={<Home />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
     </div>
-  );
+  )
 }
 
-export default App;
+const mapStateToProps = state => {
+  return ({
+    darkMode: state.darkModeReducer.darkMode
+  })
+}
+
+export default connect(mapStateToProps)(App);

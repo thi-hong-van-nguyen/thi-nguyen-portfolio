@@ -1,0 +1,203 @@
+@import 'config';
+@import 'home';
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,400;0,700;1,400;1,700&family=Prompt:ital,wght@0,300;0,400;0,700;1,400;1,700&family=Varela+Round&display=swap');
+
+
+.btn {
+    margin: 5%;
+    text-transform: capitalize;
+    background: $dark-mode-primary-color;
+    border: solid 1px $dark-mode-primary-color;
+    i {
+        padding-right: 10px;
+    }
+    &:hover {
+        background: $dark-mode-primary-color;
+        border: solid 1px $dark-mode-primary-color;
+    }
+}
+
+.dark-mode {
+    background: $dark-mode-bg;
+    color: set-text-color($dark-mode-bg);
+}
+
+.light-mode {
+    background: $light-mode-bg;
+    color: set-text-color($light-mode-bg);
+}
+
+.main-wrapper, footer {
+    margin-left: 280px;
+}
+
+///////////////////////////////////////////////////////////
+////////////////////         HEADER         ///////////////
+///////////////////////////////////////////////////////////
+
+header {
+    background: $dark-mode-header-bg;
+    z-index: 2;
+    width: 280px;
+    position: fixed;
+    height: 100%;
+    text-align: center;
+    border-right: solid 7px rgb(84, 90, 100);
+    padding: 30px 20px;
+    color: set-text-color($dark-mode-bg);
+}
+
+.header__light {
+    background: $light-mode-header-bg !important;
+}
+
+.menu {
+    &__intro {
+        h1 {
+            animation: glow 1s ease-in-out infinite alternate;
+        };
+
+        &--img {
+            padding: 12px 0;
+            img {
+                width: 160px;
+                height: 160px;
+                object-fit: cover;
+                border-radius: map-get($border-radius, 'image');
+                object-position: 50% 30%;
+            }
+        };
+
+        &--links {
+            padding: 20px 0;
+            a {
+                padding: 5px;
+                i {
+                    color: $dark-mode-primary-color;
+                    &:hover {
+                        color: set-text-color($dark-mode-bg);
+                        @include transition-ease;
+                        transform: scale(1.2);
+                    }
+                }
+                .light {
+                    // color: red !important;
+                    color: set-text-color($dark-mode-bg) !important;
+                }
+            }
+        };
+    }
+
+    &__nav-bar {
+        border-top: solid rgba(255, 255, 255, 0.5) 1px;
+        border-bottom: solid rgba(255, 255, 255, 0.5) 1px;
+        padding: 5%;
+
+        &--links {
+            @include flex-col;
+            align-items: flex-start;
+            padding: 0 0 0 5%;
+            a {
+                color: #d3d3d3;
+                text-decoration: none;
+                text-transform: capitalize;
+                padding: 3%;
+                font-weight: map-get($font-weight, 'bold');
+                font-size: 1.1rem;
+                letter-spacing: 1.5px;
+                i{
+                    width: 40px;
+                }
+                &:hover {
+                    color: set-text-color($dark-mode-bg);
+                    @include transition-ease;
+                    text-shadow: 0 0 15px #fff, 0 0 20px #367a5d, 0 0 25px #367a5d, 0 0 30px #367a5d, 0 0 35px #367a5d, 0 0 40px #367a5d, 0 0 45px #367a5d;
+                }
+            };
+            .light {
+                color: #114d3f;
+            }
+            .dark {
+                color: $dark-mode-primary-color;
+            }
+        }
+
+        .hiremeBtn-light {
+            background: #114d3f !important;
+
+        }
+    }
+
+    &__dark-mode{
+        @include flex-col();
+        padding: 10%;
+
+        div:first-child {
+            margin: 5px 0;
+        }
+
+        div:nth-child(2) {
+            width: 50px;
+            height: 28px;
+            border-radius: map-get($border-radius, 'dark-mode-icon');
+            border: solid 2px $dark-mode-primary-color;
+            position: relative;
+            margin-top: 5px;
+            cursor: pointer;
+
+            &::after {
+                content: '';
+                width: 50%;
+                height: 80%;
+                display: block;
+                position: relative;
+                background: $dark-mode-primary-color;
+                left: 46%;
+                top: 10%;
+                border-radius: 65px;
+                transition: 0.3s;
+            }
+        }
+
+        .light {
+            border: solid 2px #fff !important;
+            &::after {
+                left: 5% !important;
+                background: #026b52 !important;
+            }
+        }
+    }
+
+
+
+
+
+    // &.light {
+        //     background: #fff;
+        // }
+    // }
+};
+
+@keyframes glow {
+    from {
+      text-shadow: 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #367a5d, 0 0 25px #367a5d, 0 0 30px #367a5d, 0 0 35px #367a5d, 0 0 40px #367a5d;
+    }
+
+    to {
+      text-shadow: 0 0 15px #fff, 0 0 20px #57cc99, 0 0 25px #57cc99, 0 0 30px #57cc99, 0 0 35px #57cc99, 0 0 40px #57cc99, 0 0 45px #57cc99;
+    }
+  }
+
+///////////////////////////////////////////////////////////
+////////////////////           MAIN         ///////////////
+///////////////////////////////////////////////////////////
+main {
+    width: 100%;
+    border: solid red 1px;
+    margin: 0 auto;
+}
+
+///////////////////////////////////////////////////////////
+////////////////////         FOOTER         ///////////////
+///////////////////////////////////////////////////////////
+
