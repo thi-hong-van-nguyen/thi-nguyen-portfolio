@@ -13,7 +13,7 @@ import antdesign from '../../photos/antdesign.png'
 import rupikaur from '../../photos/rupikaur.PNG'
 import coderheroes from '../../photos/coderheroes.PNG'
 import anywherefitness from '../../photos/anywherefitness.PNG'
-import bio2 from '../../photos/bio2.jpg'
+import bio4 from '../../photos/bio4.jpg'
 import { getActiveKey } from '../../redux/actions'
 
 function Home(props) {
@@ -33,58 +33,69 @@ function Home(props) {
     return (
         <div className='home-wrapper'>
             <section className='about-me-section'>
-                <div className='bio'>
-                    <h2>Thi Nguyen</h2>
-                    <div>Full Stack Web Developer</div>
-                    <div>
-                        I'm a web developer specialized in both front end and back end for modern web apps. Want to know about my project? Check out my <Link to='/portfolio'>portfolio</Link> and <Link to='/resume'>online resume</Link>
+                <div className='about-me-section__container'>
+                    <div className='bio'>
+                        <h2>Thi Nguyen</h2>
+                        <h3>Full Stack Web Developer</h3>
+                        <div>
+                            I'm a web developer specialized in both front end and back end for modern web apps. Want to know about my project? Check out my <Link to='/portfolio'>portfolio</Link> and <Link to='/resume'>online resume</Link>
+                        </div>
+                        <div>
+                            <button
+                                type="button" class="btn btn-primary"
+                                onClick={() => navigate('/portfolio')}
+                            >
+                                <i class="fas fa-arrow-circle-right"></i>
+                                view portfolio
+                            </button>
+                            <button
+                                type="button" class="btn btn-secondary"
+                                onClick={() => navigate('/resume')}
+                            >
+                                <i class="fas fa-file-alt"></i>
+                                view resume
+                            </button>
+                        </div>
                     </div>
-                    <div>
-                        <button type="button" class="btn btn-primary">
-                            <i class="fas fa-arrow-circle-right"></i>
-                            view portfolio
-                        </button>
-                        <button type="button" class="btn btn-secondary">
-                            <i class="fas fa-file-alt"></i>
-                            view resume
-                        </button>
+                    <div className='avatar'>
+                        <img src={bio4} alt='avatar' />
                     </div>
-                </div>
-                <div className='avatar'>
-                    <img src={bio2} alt='avatar' />
                 </div>
             </section>
-            <section>
-                <h2>What I Use For My Projects</h2>
-                <div>Below is a quick overview of my main technical skill sets and technologies I use. Check out my <Link to='/portfolio'>portfolio</Link> and <Link to='/resume'>online resume</Link> for more information.</div>
-                <div>
-                    <div>
-                        <div>
+
+            <section className='skills-section'>
+                <div className='skills-section__container'>
+                    <div className='skills-intro'>
+                        <div><h2>What I Use For My Projects</h2></div>
+                        <div>Below is a quick overview of my main technical skill sets and technologies I use. Check out my <Link to='/portfolio'>portfolio</Link> and <Link to='/resume'>online resume</Link> for more information.</div>
+                    </div>
+                    <div className='skills-container'>
+                        <div className='skill'>
                             <div><img src={javascript} alt='JavaScript icon' style={{ width: '50px', height: '50px' }} /></div>
                             <h3>Vanilla JavaScript</h3>
                             <div>Vanilla JavaScript was my first choice of programming language because of its faster adoption of frameworks and libraries. I have learned that when you learn JSm, your ability to adopt new frameworks and libraries triples in speed. This is because you’re able to look at a piece of code and understand what it means.</div>
                         </div>
-                        <div>
+                        <div className='skill'>
                             <div><img src={html} alt='html-css icon' style={{ width: '50px', height: '50px' }} /><img src={css} alt='html-css icon' style={{ width: '50px', height: '50px' }} /></div>
                             <h3>HTML & CSS</h3>
                             <div>HTML and CSS are the very basic skills that I learned at Bloom Tech. I was amazed when I first saw the output in the console and in the browser even with only few basic codes.</div>
                         </div>
-                        <div>
+                        <div className='skill'>
                             <div><img src={python} alt='Python icon' style={{ width: '50px', height: '50px' }} /></div>
                             <h3>Python</h3>
                             <div>My core knowlede are Data Structures and Algorithms. Learning Python allows me to focus on solving problems, rather than focusing on syntax, and it supplements for other programming languages that I have been learning.</div>
                         </div>
-                        <div>
+                        <div className='skill'>
                             <div><img src={sass} alt='SASS icon' style={{ width: '50px', height: '50px' }} /><img src={antdesign} alt='Ant Design icon' style={{ width: '50px', height: '50px' }} /></div>
                             <h3>SASS & Ant Design</h3>
                             <div>Along with basic CSS, SASS and Ant Design help my design more attractive, professional and more maintainable.</div>
                         </div>
-                        <div>
+                        <div className='skill'>
                             <div><img src={react} alt='React icon' style={{ width: '50px', height: '50px' }} /></div>
                             <h3>React</h3>
                             <div>I love building web apps with React! React is easy to use and have tons of open sources that can assist me in the web building process. React is known as a remarkably flexible JavaScript Library which can be used on a vast variety of platforms to build high quality User Interfaces</div>
                         </div>
-                        <div>
+                        <div className='skill'>
                             <div><img src={node} alt='Node js icon' style={{ width: '50px', height: '50px' }} /></div>
                             <h3>Node.js</h3>
                             <div>Building back end is something I always enjoy. I train myself to not only become a master in front end, but also back end because it allows me to work flexible in web developemnt section.</div>
@@ -92,7 +103,8 @@ function Home(props) {
                     </div>
                 </div>
             </section>
-            <section>
+
+            <section className='testimonials'>
                 <div>
                     <h2>My Favorite Quotes/Poem</h2>
                     <div>
@@ -184,9 +196,14 @@ function Home(props) {
                     </div>
 
                 </div>
-                <div><button onClick={handleClick}>View Portfolio</button></div>
+                <div>
+                    <button
+                        onClick={() => navigate('/portfolio')}
+                    >
+                        View Portfolio
+                    </button>
+                </div>
             </section>
-
         </div>
     )
 }

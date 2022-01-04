@@ -1,6 +1,23 @@
-@import "config";
-@import "home";
+@import 'config';
+@import 'home';
+@import 'portfolio';
 @import url('https://fonts.googleapis.com/css2?family=EB+Garamond&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,400;0,700;1,400;1,700&family=Prompt:ital,wght@0,300;0,400;0,700;1,400;1,700&family=Varela+Round&display=swap');
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: 'Prompt', sans-serif;
+    font-weight: lighter;
+};
+
+h1, h2, h3 {
+    font-weight: bold;
+};
+
+a:link {
+    text-decoration: none;
+}
 
 .btn {
     margin: 5% 0;
@@ -41,7 +58,6 @@ header {
     position: fixed;
     height: 100%;
     text-align: center;
-    border-right: solid 7px rgb(84, 90, 100);
     padding: 30px 20px;
     color: set-text-color($dark-mode-bg);
 }
@@ -190,7 +206,6 @@ header {
 ///////////////////////////////////////////////////////////
 main {
     width: 100%;
-    border: solid purple 1px;
 }
 
 

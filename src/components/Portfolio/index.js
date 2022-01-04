@@ -10,7 +10,7 @@ function Portfolio(props) {
     }, [])
 
     return (
-        <div>portfolio</div>
+        <div className='portfolio'>portfolio</div>
     )
 }
 

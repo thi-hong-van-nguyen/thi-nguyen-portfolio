@@ -9,7 +9,7 @@ import Portfolio from './components/Portfolio'
 import Resume from './components/Resume'
 import ContactMe from './components/ContactMe'
 
-import './styles/App.css'
+import './styles/css/App.css'
 
 function App(props) {
   const { darkMode } = props

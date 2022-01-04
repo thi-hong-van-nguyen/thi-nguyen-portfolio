@@ -1,10 +1,12 @@
 $dark-green: #114d3f;
-$dark-mode-bg: #161925;
+$dark-mode-bg: #07121b;
 $light-mode-bg: rgb(238, 236, 236);
 $dark-mode-header-bg: #1b2a41;
 $light-mode-header-bg: #00916e;
 $dark-mode-primary-color: #00916e;
-$large-desktop-size: 1300px;
+
+$desktop: 1300px;
+$mobile: 800px;
 
 $border-radius: (
     'image': 100%,
@@ -17,21 +19,6 @@ $font-weight: (
     'bold': 700
 );
 
-* {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    font-family: 'Prompt', sans-serif;
-    font-weight: lighter;
-};
-
-h1, h2, h3 {
-    font-weight: bold;
-};
-
-a {
-    text-decoration: none;
-}
 
 @mixin transition-ease {
     transition: all 0.3s ease-in-out;
@@ -52,10 +39,18 @@ a {
     width: 100%
 }
 
+@mixin mobile {
+    @media (max-width: $mobile) {
+        @content;
+    }
+}
+
 @function set-text-color($bg-color) {
     @if($bg-color == $dark-mode-bg) {
-        @return rgb(229, 226, 226);
+        @return rgb(207, 204, 204);
     } @else {
         @return #292929;
     }
 };
+
+
