@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { connect } from 'react-redux'
 
@@ -7,6 +7,7 @@ import { setDarkMode } from '../../redux/actions'
 
 function Header(props) {
     const { active, darkMode, setDarkMode } = props
+    const [displayMenu, setDisplayMenu] = useState(false)
     const navigate = useNavigate()
 
     const handleClick = () => {
@@ -40,8 +41,11 @@ function Header(props) {
     return (
         <header className={darkMode === 'dark' ? 'header__dark' : 'header__light'}>
             <div className='menu'>
-                <section className='menu__intro'>
+                <i className="fas fa-bars" onClick={() => setDisplayMenu(!displayMenu)}></i>
+                <section className='menu__name'>
                     <h1>Thi Nguyen</h1>
+                </section>
+                <section className={`menu__intro ${displayMenu ? 'menu-display' : 'menu-hidden'}`}>
                     <div className='menu__intro--img'>
                         <img src={avatar} alt='avatar' />
                     </div>
@@ -77,7 +81,7 @@ function Header(props) {
                         </a>
                     </div>
                 </section>
-                <section className='menu__nav-bar'>
+                <section className={`menu__nav-bar ${displayMenu ? 'menu-display' : 'menu-hidden'}`}>
                     <div className='menu__nav-bar--links'>
                         <Link
                             to='/'
@@ -113,10 +117,10 @@ function Header(props) {
                         hire me
                     </button>
                 </section>
-                <section className='menu__dark-mode'>
-                    <div>&#9680; Dark Mode</div>
+                <section className={`menu__dark-mode ${displayMenu ? 'menu-display' : 'menu-hidden'}`}>
+                    <div className='dark-mode-text'>&#9680; Dark Mode</div>
                     <div
-                        className={darkMode === 'dark' ? 'dark' : 'light'}
+                        className={`dark-mode-icon ${darkMode === 'dark' ? 'dark' : 'light'}`}
                         onClick={toggleDarkMode}
                     >
                     </div>

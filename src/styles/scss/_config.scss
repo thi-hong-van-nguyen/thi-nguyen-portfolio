@@ -6,7 +6,9 @@ $light-mode-header-bg: #00916e;
 $dark-mode-primary-color: #00916e;
 
 $desktop: 1300px;
-$mobile: 800px;
+$large-tablet: 990px;
+$tablet: 800px;
+$mobile: 650px;
 
 $border-radius: (
     'image': 100%,
@@ -15,7 +17,8 @@ $border-radius: (
 );
 
 $font-weight: (
-    'light': 200,
+    'light': 300,
+    'regular': 400,
     'bold': 700
 );
 
@@ -26,6 +29,7 @@ $font-weight: (
 
 @mixin flex-row {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
     width: 100%
@@ -41,6 +45,24 @@ $font-weight: (
 
 @mixin mobile {
     @media (max-width: $mobile) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (max-width: $tablet) {
+        @content;
+    }
+}
+
+@mixin large-tablet {
+    @media (max-width: $large-tablet) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (max-width: $desktop) {
         @content;
     }
 }

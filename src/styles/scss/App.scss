@@ -1,14 +1,14 @@
 @import 'config';
 @import 'home';
 @import 'portfolio';
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,400;0,700;1,400;1,700&family=Prompt:ital,wght@0,300;0,400;0,700;1,400;1,700&family=Varela+Round&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Prompt:ital,wght@0,300;0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,700&display=swap');
 
 * {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
-    font-family: 'Prompt', sans-serif;
-    font-weight: lighter;
+    font-family: 'Roboto', sans-serif;
+    font-weight: map-get($font-weight , light );
 };
 
 h1, h2, h3 {
@@ -53,24 +53,47 @@ a:link {
 
 header {
     background: $dark-mode-header-bg;
-    z-index: 2;
+    z-index: 99;
     width: 280px;
     position: fixed;
     height: 100%;
     text-align: center;
     padding: 30px 20px;
     color: set-text-color($dark-mode-bg);
+
+    @include large-tablet {
+        position: static;
+        width: 100%;
+    }
 }
 
 .header__light {
     background: $light-mode-header-bg !important;
 }
 
+.fa-bars {
+    font-size: 1.5rem;
+    transform:scale(1.5,1.2);
+    border: solid 1px #fff;
+    padding: 7px 10px;
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    visibility: hidden;
+
+    @include large-tablet {
+        visibility: visible;
+    }
+}
+
 .menu {
-    &__intro {
+    &__name {
         h1 {
             animation: glow 1s ease-in-out infinite alternate;
         };
+    }
+
+    &__intro {
 
         &--img {
             padding: 12px 0;
@@ -108,8 +131,7 @@ header {
         padding: 5%;
 
         &--links {
-            @include flex-col;
-            align-items: flex-start;
+            @include flex-row;
             padding: 0 0 0 5%;
             a {
                 color: #d3d3d3;
@@ -137,40 +159,66 @@ header {
 
         .hiremeBtn-light {
             background: $dark-green !important;
+        }
 
+        @include large-tablet {
+            padding: 0;
+            &--links {
+                padding: 0 8%;
+                a {
+                    padding: 2% 0 0 0;
+                }
+            }
+            button {
+                margin: 2%;
+            }
+        }
+
+        @include mobile {
+            &--links {
+                @include flex-col;
+                align-items: flex-start;
+                padding: 3% 5%;
+
+            }
         }
     }
 
     &__dark-mode {
-        @include flex-col();
-        padding: 10%;
+        @include flex-col;
 
-        div:first-child {
-            margin: 5px 0;
+        .dark-mode-text {
+            margin: 10px 0;
         }
 
-        div:nth-child(2) {
+        .dark-mode-icon {
             width: 50px;
             height: 28px;
-            border-radius: map-get($border-radius, 'dark-mode-icon');
             border: solid 2px $dark-mode-primary-color;
-            position: relative;
-            margin-top: 5px;
-            cursor: pointer;
-
-            &::after {
-                content: '';
-                width: 50%;
-                height: 80%;
-                display: block;
-                position: relative;
-                background: $dark-mode-primary-color;
-                left: 46%;
-                top: 10%;
-                border-radius: 65px;
-                transition: 0.3s;
-            }
         }
+
+        // .dark-mode-icon {
+        //     width: 50px;
+        //     height: 28px;
+        //     border-radius: map-get($border-radius, 'dark-mode-icon');
+        //     border: solid 2px $dark-mode-primary-color;
+        //     position: relative;
+        //     margin-top: 5px;
+        //     cursor: pointer;
+
+        //     &::after {
+        //         content: '';
+        //         width: 50%;
+        //         height: 80%;
+        //         display: block;
+        //         position: relative;
+        //         background: $dark-mode-primary-color;
+        //         left: 46%;
+        //         top: 10%;
+        //         border-radius: 65px;
+        //         transition: 0.3s;
+        //     }
+        // }
 
         .light {
             border: solid 2px #fff !important;
@@ -179,16 +227,27 @@ header {
                 background: #026b52 !important;
             }
         }
+
+        // @include large-tablet {
+        //     @include flex-col;
+        //     padding: 2% 0 0 0;
+        //     .dark-mode-text {
+        //         margin: 0;
+        //     }
+        // }
     }
 
-
-
-
-
-    // &.light {
-        //     background: #fff;
-        // }
-    // }
+    @include large-tablet {
+        &__intro &__nav-bar &__dark-mode {
+            display: none;
+        }
+        .menu-hidden {
+            display: none;
+        }
+        .menu-display {
+            display: block;
+        }
+    }
 };
 
 @keyframes glow {
@@ -213,3 +272,9 @@ main {
 ////////////////////         FOOTER         ///////////////
 ///////////////////////////////////////////////////////////
 
+.menu__dark-mode {
+    @include large-tablet {
+        display: flex;
+        flex-direction: column;
+    }
+}

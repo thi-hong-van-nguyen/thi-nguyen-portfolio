@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=EB+Garamond&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,400;0,700;1,400;1,700&family=Prompt:ital,wght@0,300;0,400;0,700;1,400;1,700&family=Varela+Round&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Prompt:ital,wght@0,300;0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,700&display=swap");
 .about-me-section .skills-section {
   width: 100%;
   overflow: hidden;
@@ -9,12 +9,14 @@
 }
 
 .about-me-section__container {
-  max-width: 1300px;
+  max-width: 80%;
   margin: auto;
   padding: 3% 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -69,25 +71,57 @@
   max-width: 1300px;
   margin: 0 auto;
   padding: 2% 0;
+  border: solid red 1px;
 }
 
 .skills-section__container .skills-intro {
-  padding-left: 2%;
-  line-height: 30px;
+  position: relative;
 }
 
 .skills-section__container .skills-intro div:first-child {
-  height: 100px;
-  border: solid red 1px;
+  padding-left: 1%;
+  vertical-align: center;
 }
 
 .skills-section__container .skills-intro div:first-child::before {
   content: '';
-  display: inline-block;
+  position: absolute;
   background: #00916e;
   width: 7px;
-  height: 100%;
+  height: 70%;
   margin: 0 20px 5px;
+  left: -20px;
+  bottom: 30px;
+}
+
+.skills-section__container .skills-intro div:nth-child(2) {
+  padding: 5px 0;
+}
+
+.skills-section__container .skills-intro div:nth-child(2) a {
+  color: #00916e;
+}
+
+.skills-section__container .skills-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  width: 100%;
+  border: solid purple 1px;
+}
+
+.skills-section__container .skills-container .skill {
+  width: 25%;
+  border: solid blue 1px;
 }
 
 .portfolio {
@@ -99,8 +133,8 @@
           box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: 'Prompt', sans-serif;
-  font-weight: lighter;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
 }
 
 h1, h2, h3 {
@@ -143,7 +177,7 @@ a:link {
 
 header {
   background: #1b2a41;
-  z-index: 2;
+  z-index: 99;
   width: 280px;
   position: fixed;
   height: 100%;
@@ -152,11 +186,36 @@ header {
   color: #cfcccc;
 }
 
+@media (max-width: 990px) {
+  header {
+    position: static;
+    width: 100%;
+  }
+}
+
 .header__light {
   background: #00916e !important;
 }
 
-.menu__intro h1 {
+.fa-bars {
+  font-size: 1.5rem;
+  -webkit-transform: scale(1.5, 1.2);
+          transform: scale(1.5, 1.2);
+  border: solid 1px #fff;
+  padding: 7px 10px;
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  visibility: hidden;
+}
+
+@media (max-width: 990px) {
+  .fa-bars {
+    visibility: visible;
+  }
+}
+
+.menu__name h1 {
   -webkit-animation: glow 1s ease-in-out infinite alternate;
           animation: glow 1s ease-in-out infinite alternate;
 }
@@ -209,20 +268,15 @@ header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
   padding: 0 0 0 5%;
 }
 
@@ -258,6 +312,44 @@ header {
   background: #114d3f !important;
 }
 
+@media (max-width: 990px) {
+  .menu__nav-bar {
+    padding: 0;
+  }
+  .menu__nav-bar--links {
+    padding: 0 8%;
+  }
+  .menu__nav-bar--links a {
+    padding: 2% 0 0 0;
+  }
+  .menu__nav-bar button {
+    margin: 2%;
+  }
+}
+
+@media (max-width: 650px) {
+  .menu__nav-bar--links {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    width: 100%;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+    padding: 3% 5%;
+  }
+}
+
 .menu__dark-mode {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -273,35 +365,16 @@ header {
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
-  padding: 10%;
 }
 
-.menu__dark-mode div:first-child {
-  margin: 5px 0;
+.menu__dark-mode .dark-mode-text {
+  margin: 10px 0;
 }
 
-.menu__dark-mode div:nth-child(2) {
+.menu__dark-mode .dark-mode-icon {
   width: 50px;
   height: 28px;
-  border-radius: 16px;
   border: solid 2px #00916e;
-  position: relative;
-  margin-top: 5px;
-  cursor: pointer;
-}
-
-.menu__dark-mode div:nth-child(2)::after {
-  content: '';
-  width: 50%;
-  height: 80%;
-  display: block;
-  position: relative;
-  background: #00916e;
-  left: 46%;
-  top: 10%;
-  border-radius: 65px;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
 }
 
 .menu__dark-mode .light {
@@ -311,6 +384,18 @@ header {
 .menu__dark-mode .light::after {
   left: 5% !important;
   background: #026b52 !important;
+}
+
+@media (max-width: 990px) {
+  .menu__intro .menu__nav-bar .menu__dark-mode {
+    display: none;
+  }
+  .menu .menu-hidden {
+    display: none;
+  }
+  .menu .menu-display {
+    display: block;
+  }
 }
 
 @-webkit-keyframes glow {
@@ -333,5 +418,17 @@ header {
 
 main {
   width: 100%;
+}
+
+@media (max-width: 990px) {
+  .menu__dark-mode {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 /*# sourceMappingURL=App.css.map */

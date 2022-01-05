@@ -10,6 +10,9 @@ import python from '../../photos/python.svg'
 import react from '../../photos/react.svg'
 import sass from '../../photos/sass.svg'
 import antdesign from '../../photos/antdesign.png'
+import postgresql from '../../photos/postgresql.svg'
+import sqlite from '../../photos/sqlite.svg'
+import study from '../../photos/study.svg'
 import rupikaur from '../../photos/rupikaur.PNG'
 import coderheroes from '../../photos/coderheroes.PNG'
 import anywherefitness from '../../photos/anywherefitness.PNG'
@@ -42,17 +45,17 @@ function Home(props) {
                         </div>
                         <div>
                             <button
-                                type="button" class="btn btn-primary"
+                                type="button" className="btn btn-primary"
                                 onClick={() => navigate('/portfolio')}
                             >
-                                <i class="fas fa-arrow-circle-right"></i>
+                                <i className="fas fa-arrow-circle-right"></i>
                                 view portfolio
                             </button>
                             <button
-                                type="button" class="btn btn-secondary"
+                                type="button" className="btn btn-secondary"
                                 onClick={() => navigate('/resume')}
                             >
-                                <i class="fas fa-file-alt"></i>
+                                <i className="fas fa-file-alt"></i>
                                 view resume
                             </button>
                         </div>
@@ -73,32 +76,47 @@ function Home(props) {
                         <div className='skill'>
                             <div><img src={javascript} alt='JavaScript icon' style={{ width: '50px', height: '50px' }} /></div>
                             <h3>Vanilla JavaScript</h3>
-                            <div>Vanilla JavaScript was my first choice of programming language because of its faster adoption of frameworks and libraries. I have learned that when you learn JSm, your ability to adopt new frameworks and libraries triples in speed. This is because you’re able to look at a piece of code and understand what it means.</div>
+                            <p>Vanilla JavaScript was my first choice of programming language because of its faster adoption of frameworks and libraries. I have learned that when you learn JSm, your ability to adopt new frameworks and libraries triples in speed. This is because you’re able to look at a piece of code and understand what it means.</p>
                         </div>
                         <div className='skill'>
                             <div><img src={html} alt='html-css icon' style={{ width: '50px', height: '50px' }} /><img src={css} alt='html-css icon' style={{ width: '50px', height: '50px' }} /></div>
                             <h3>HTML & CSS</h3>
-                            <div>HTML and CSS are the very basic skills that I learned at Bloom Tech. I was amazed when I first saw the output in the console and in the browser even with only few basic codes.</div>
+                            <p>HTML and CSS are the very basic skills that I learned at Bloom Tech. I was amazed when I first saw the output in the console and in the browser even with only few basic codes.</p>
                         </div>
                         <div className='skill'>
                             <div><img src={python} alt='Python icon' style={{ width: '50px', height: '50px' }} /></div>
                             <h3>Python</h3>
-                            <div>My core knowlede are Data Structures and Algorithms. Learning Python allows me to focus on solving problems, rather than focusing on syntax, and it supplements for other programming languages that I have been learning.</div>
+                            <p>My core knowlede are Data Structures and Algorithms. Learning Python allows me to focus on solving problems, rather than focusing on syntax, and it supplements for other programming languages that I have been learning.</p>
                         </div>
                         <div className='skill'>
                             <div><img src={sass} alt='SASS icon' style={{ width: '50px', height: '50px' }} /><img src={antdesign} alt='Ant Design icon' style={{ width: '50px', height: '50px' }} /></div>
                             <h3>SASS & Ant Design</h3>
-                            <div>Along with basic CSS, SASS and Ant Design help my design more attractive, professional and more maintainable.</div>
+                            <p>Along with basic CSS, SASS and Ant Design help my design more attractive, professional and more maintainable.</p>
                         </div>
                         <div className='skill'>
                             <div><img src={react} alt='React icon' style={{ width: '50px', height: '50px' }} /></div>
                             <h3>React</h3>
-                            <div>I love building web apps with React! React is easy to use and have tons of open sources that can assist me in the web building process. React is known as a remarkably flexible JavaScript Library which can be used on a vast variety of platforms to build high quality User Interfaces</div>
+                            <p>I love building web apps with React! React is easy to use and have tons of open sources that can assist me in the web building process. React is known as a remarkably flexible JavaScript Library which can be used on a vast variety of platforms to build high quality User Interfaces</p>
                         </div>
                         <div className='skill'>
                             <div><img src={node} alt='Node js icon' style={{ width: '50px', height: '50px' }} /></div>
                             <h3>Node.js</h3>
-                            <div>Building back end is something I always enjoy. I train myself to not only become a master in front end, but also back end because it allows me to work flexible in web developemnt section.</div>
+                            <p>Building back end is something I always enjoy. I train myself to not only become a master in front end, but also back end because it allows me to work flexible in web developemnt section.</p>
+                        </div>
+                        <div className='skill'>
+                            <div>
+                                <img src={postgresql} alt='postgresql icon' style={{ width: '50px', height: '50px' }} />
+                                <img src={sqlite} alt='postgresql icon' style={{ width: '50px', height: '50px' }} />
+                            </div>
+                            <h3>PostgreSQL & SQLite</h3>
+                            <p>SQLite is my favorite relational database management system to build DB using Node JS because of its simplicity yet efficiency. I, however, did not stop there but have been continuously learning new software, and PostgreSQL is the first.</p>
+                        </div>
+                        <div className='skill'>
+                            <div>
+                                <img src={study} alt='study icon' style={{ width: '50px', height: '50px' }} />
+                            </div>
+                            <h3>To Be Continued...</h3>
+                            <p>Pushing myself forward to become a superb web developer is something that I consider obvious. Wait for my next skills and knowledge. I would surprise you for what I'd be willing to learn and achieve</p>
                         </div>
                     </div>
                 </div>
