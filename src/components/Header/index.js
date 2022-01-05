@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { connect } from 'react-redux'
 
 import avatar from '../../photos/avatar.jpg'
-import activeReducer from '../../redux/reducers/activeReducer'
 import { setDarkMode } from '../../redux/actions'
 
 function Header(props) {

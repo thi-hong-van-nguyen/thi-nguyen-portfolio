@@ -24,9 +24,9 @@ function Home(props) {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
-    const handleClick = () => {
-        navigate('/portfolio')
-    }
+    // const handleClick = () => {
+    //     navigate('/portfolio')
+    // }
 
     console.log('home renders')
 
