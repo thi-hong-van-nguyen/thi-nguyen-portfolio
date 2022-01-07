@@ -1,10 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Prompt:ital,wght@0,300;0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,700&display=swap");
-.about-me-section, .skills-section, .testimonials-section, .projects-section {
+.about-me-section,
+.skills-section,
+.testimonials-section,
+.projects-section,
+.intro-section,
+.portfolio-section {
   width: 100%;
   overflow: hidden;
 }
 
-.about-me-section__container, .skills-section__container, .testimonials-section__container, .projects-section__container {
+.about-me-section__container,
+.skills-section__container,
+.testimonials-section__container,
+.projects-section__container,
+.intro-section__container,
+.portfolio-section__container {
   max-width: 80%;
   margin: 0 auto;
   padding: 2% 0;
@@ -623,8 +633,163 @@
   margin: 0;
 }
 
-.portfolio {
-  color: red;
+.portfolio-wrapper, section, .intro-section__container, .portfolio-section__container {
+  border: solid red 1px;
+}
+
+.portfolio-wrapper {
+  height: 100vh;
+}
+
+.portfolio-wrapper .intro-section__container {
+  text-align: center;
+  width: 55%;
+}
+
+.portfolio-wrapper .intro-section__container button {
+  margin: 1%;
+}
+
+.portfolio-wrapper .intro-section__container button a {
+  color: #ece9e9;
+}
+
+.portfolio-section__container {
+  text-align: center;
+}
+
+.portfolio-section__container .tabs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  margin: auto;
+  width: 30%;
+  border: solid red 1px;
+}
+
+.portfolio-section__container .tabs .tab {
+  width: 25%;
+  border: solid red 1px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #998f8f;
+  cursor: pointer;
+}
+
+.portfolio-section__container .tabs .tab::before {
+  content: '';
+  display: block;
+  width: 0;
+  height: 5px;
+  background: #06ac85;
+}
+
+.portfolio-section__container .tabs .active::before {
+  width: 100%;
+}
+
+.portfolio-section__container .projects {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+.portfolio-section__container .projects .project-card {
+  width: 48%;
+  border: solid red 1px;
+  margin: 3% 0;
+}
+
+.portfolio-section__container .projects .project-card__before {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  -webkit-animation: 1s ease-out 0s 1 slideInFromLeft;
+          animation: 1s ease-out 0s 1 slideInFromLeft;
+}
+
+.portfolio-section__container .projects .project-card__before img {
+  width: 45%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.portfolio-section__container .projects .project-card__before .card-content {
+  text-align: left;
+  padding: 3% 0 0 3%;
+  width: 55%;
+  border: solid red 1px;
+}
+
+.portfolio-section__container .projects .project-card__before .card-content h3 {
+  font-size: 1.2rem;
+  text-decoration: underline;
+}
+
+.portfolio-section__container .projects .project-card__before .card-content .content {
+  font-size: 0.8rem;
+}
+
+.portfolio-section__container .projects .project-card__before .card-content .client {
+  font-size: 0.7rem;
+  color: #7a7878;
+}
+
+.portfolio-section__container .projects .project-card__after {
+  visibility: hidden;
+  height: 0;
+}
+
+@-webkit-keyframes slideInFromLeft {
+  0% {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
 }
 
 * {
@@ -662,7 +827,7 @@ a:link {
 
 .dark-mode {
   background: #07121b;
-  color: #fcf6f6;
+  color: #ece9e9;
 }
 
 .light-mode {
@@ -688,7 +853,7 @@ header {
   height: 100%;
   text-align: center;
   padding: 30px 20px;
-  color: #fcf6f6;
+  color: #ece9e9;
 }
 
 @media (max-width: 990px) {
@@ -752,7 +917,7 @@ header {
 }
 
 .menu__intro--links a i:hover {
-  color: #fcf6f6;
+  color: #ece9e9;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
   -webkit-transform: scale(1.2);
@@ -760,7 +925,7 @@ header {
 }
 
 .menu__intro--links a .light {
-  color: #fcf6f6 !important;
+  color: #ece9e9 !important;
 }
 
 .menu__nav-bar {
@@ -799,7 +964,7 @@ header {
 }
 
 .menu__nav-bar--links a:hover {
-  color: #fcf6f6;
+  color: #ece9e9;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
   text-shadow: 0 0 15px #fff, 0 0 20px #367a5d, 0 0 25px #367a5d, 0 0 30px #367a5d, 0 0 35px #367a5d, 0 0 40px #367a5d, 0 0 45px #367a5d;

@@ -48,9 +48,10 @@ export const projects = [
         title: 'Coder Heroes',
         img_url: coderheroes,
         content: 'A web application for a real non-profit organization, Code Your Dreams, to aid in the cause of helping underprivileged youth in the Chicagoland area break into tech by offering coding courses',
-        client: 'Bloom Tech',
+        client: 'Code Your Dream, non-profit org',
         site: 'https://github.com/thi-hong-van-nguyen/coder-heroes-fe',
         code: 'https://github.com/thi-hong-van-nguyen/coder-heroes-fe',
+        type: 'front end'
     },
     {
         title: 'Anywhere Fitness',
@@ -59,6 +60,7 @@ export const projects = [
         client: 'Bloom Tech',
         site: 'https://anywhere-fitness-frontend.herokuapp.com/',
         code: 'https://github.com/anywhere-fitness-project',
+        type: 'full stack'
     },
     {
         title: 'Potluck Planner',
@@ -67,6 +69,7 @@ export const projects = [
         client: 'Bloom Tech',
         site: 'https://github.com/Build-Week-Potluck-Planner-4',
         code: 'https://github.com/Build-Week-Potluck-Planner-4',
+        type: 'front end'
     },
     {
         title: 'Pets Adoption',
@@ -75,5 +78,21 @@ export const projects = [
         client: 'Bloom Tech',
         site: 'https://pets-adopt.vercel.app/',
         code: 'https://github.com/pets-adopt',
+        type: 'front end'
     },
+]
+
+export const tabs = [
+    {
+        title: 'All',
+    },
+    {
+        title: 'Full Stack',
+    },
+    {
+        title: 'Front End',
+    },
+    {
+        title: 'Back End',
+    }
 ]

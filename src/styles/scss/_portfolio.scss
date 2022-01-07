@@ -1,3 +1,120 @@
-.portfolio {
-    color: red
+.portfolio-wrapper, section, .intro-section__container, .portfolio-section__container {
+    border: solid red 1px;
 }
+
+/////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////   INTRO     /////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
+.portfolio-wrapper {
+    height: 100vh;
+    .intro-section {
+        &__container {
+            text-align: center;
+            width: 55%;
+            button {
+                margin: 1%;
+                a {
+                    color: set-text-color($dark-mode-bg);
+                }
+            }
+        }
+    }
+}
+
+/////////////////////////////////////////////////////////////////////////////////
+////////////////////////////////   PROJECTS     /////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
+.portfolio-section {
+    &__container {
+        text-align: center;
+
+        .tabs {
+            @include flex-row;
+            margin: auto;
+            width: 30%;
+            border: solid red 1px;
+
+            .tab {
+                width: 25%;
+                border: solid red 1px;
+                font-size: map-get($font-size, small);
+                font-weight: map-get($font-weight , bold);
+                color: rgb(153, 143, 143);
+                cursor: pointer;
+
+                &::before {
+                    content: '';
+                    display: block;
+                    width: 0;
+                    height: 5px;
+                    background: $dark-mode-primary-color;
+                }
+            }
+
+            .active {
+                &::before {
+                    width: 100%;
+                }
+            }
+        }
+
+        .projects {
+            @include flex-row;
+            .project-card {
+                width: 48%;
+                border: solid red 1px;
+                margin: 3% 0;
+
+
+
+                &__before {
+                    @include flex-row;
+                    align-items: flex-start;
+                    animation: 1s ease-out 0s 1 slideInFromLeft;
+                    img {
+                        width: 45%;
+                        object-fit: cover;
+                    }
+
+                    .card-content {
+                        text-align: left;
+                        padding: 3% 0 0 3%;
+                        width: 55%;
+                        h3 {
+                            font-size: map-get($font-size, large);
+                            text-decoration: underline;
+                        }
+                        .content {
+                            font-size: map-get($font-size, small);
+                        }
+                        .client {
+                            font-size: 0.7rem;
+                            color: rgb(122, 120, 120)
+                        }
+                        border: solid red 1px;
+                    }
+                }
+
+                &__after {
+                     visibility: hidden;
+                     height: 0;
+                }
+
+
+
+            }
+        }
+    }
+}
+
+@keyframes slideInFromLeft {
+    0% {
+      transform: translateX(-100%);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+
+
+

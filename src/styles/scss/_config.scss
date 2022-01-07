@@ -80,7 +80,7 @@ $font-size: (
 
 @function set-text-color($bg-color) {
     @if($bg-color == $dark-mode-bg) {
-        @return rgb(252, 246, 246);
+        @return rgb(236, 233, 233);
     } @else {
         @return #131212;
     }
