@@ -28,8 +28,8 @@ a:link {
         padding-right: 10px;
     }
     &:hover {
-        background: $dark-mode-primary-color;
-        border: solid 1px $dark-mode-primary-color;
+        background: $dark-mode-button-hover-color;
+        border: solid 1px $dark-mode-button-hover-color;;
     }
 }
 
@@ -45,6 +45,9 @@ a:link {
 
 .main-wrapper, footer {
     margin-left: 280px;
+    @include large-tablet {
+        margin-left: 0;
+    }
 }
 
 ///////////////////////////////////////////////////////////
@@ -94,7 +97,6 @@ header {
     }
 
     &__intro {
-
         &--img {
             padding: 12px 0;
             img {
@@ -117,7 +119,7 @@ header {
                         @include transition-ease;
                         transform: scale(1.2);
                     }
-                }
+                };
                 .light {
                     color: set-text-color($dark-mode-bg) !important;
                 }
@@ -142,12 +144,12 @@ header {
                 letter-spacing: 1.5px;
                 i{
                     width: 40px;
-                }
+                };
                 &:hover {
                     color: set-text-color($dark-mode-bg);
                     @include transition-ease;
                     text-shadow: 0 0 15px #fff, 0 0 20px #367a5d, 0 0 25px #367a5d, 0 0 30px #367a5d, 0 0 35px #367a5d, 0 0 40px #367a5d, 0 0 45px #367a5d;
-                }
+                };
             };
             .light {
                 color: $dark-green;
@@ -159,7 +161,7 @@ header {
 
         .hiremeBtn-light {
             background: $dark-green !important;
-        }
+        };
 
         @include large-tablet {
             padding: 0;
@@ -167,85 +169,97 @@ header {
                 padding: 0 8%;
                 a {
                     padding: 2% 0 0 0;
-                }
-            }
+                };
+            };
             button {
                 margin: 2%;
-            }
-        }
+                width: 80%;
+            };
+        };
 
         @include mobile {
             &--links {
                 @include flex-col;
                 align-items: flex-start;
                 padding: 3% 5%;
-
-            }
-        }
-    }
+            };
+        };
+    };
 
     &__dark-mode {
         @include flex-col;
-
         .dark-mode-text {
             margin: 10px 0;
-        }
+        };
 
         .dark-mode-icon {
             width: 50px;
             height: 28px;
             border: solid 2px $dark-mode-primary-color;
-        }
+        };
 
-        // .dark-mode-icon {
-        //     width: 50px;
-        //     height: 28px;
-        //     border-radius: map-get($border-radius, 'dark-mode-icon');
-        //     border: solid 2px $dark-mode-primary-color;
-        //     position: relative;
-        //     margin-top: 5px;
-        //     cursor: pointer;
+        .dark-mode-icon {
+            width: 50px;
+            height: 28px;
+            border-radius: map-get($border-radius, 'dark-mode-icon');
+            border: solid 2px $dark-mode-primary-color;
+            position: relative;
+            margin-top: 5px;
+            cursor: pointer;
 
-        //     &::after {
-        //         content: '';
-        //         width: 50%;
-        //         height: 80%;
-        //         display: block;
-        //         position: relative;
-        //         background: $dark-mode-primary-color;
-        //         left: 46%;
-        //         top: 10%;
-        //         border-radius: 65px;
-        //         transition: 0.3s;
-        //     }
-        // }
+            &::after {
+                content: '';
+                width: 50%;
+                height: 80%;
+                display: block;
+                position: relative;
+                background: $dark-mode-primary-color;
+                left: 46%;
+                top: 10%;
+                border-radius: 65px;
+                transition: 0.3s;
+            };
+        };
 
         .light {
             border: solid 2px #fff !important;
             &::after {
                 left: 5% !important;
                 background: #026b52 !important;
-            }
-        }
+            };
+        };
 
-        // @include large-tablet {
-        //     @include flex-col;
-        //     padding: 2% 0 0 0;
-        //     .dark-mode-text {
-        //         margin: 0;
-        //     }
-        // }
-    }
+    };
 
     @include large-tablet {
-        &__intro &__nav-bar &__dark-mode {
-            display: none;
+        &__name {
+            height: 40px;
         }
+
+        .sections-wrapper {
+            opacity: 0;
+            height: 0;
+            transition:  height 0.2s ease;
+        };
         .menu-hidden {
-            display: none;
-        }
+            opacity: 0;
+            height: 1px;
+            transition:  height 0.2s ease;
+        };
         .menu-display {
-            display: block;
+            opacity: 1;
+            height: 500px;
+            padding-top: 10px;
+        };
+    };
+
+    @include mobile {
+        .menu-display {
+            height: 320px;
+        }
+
+        &__intro {
+            display: none;
         }
     }
 };
@@ -258,23 +272,28 @@ header {
     to {
       text-shadow: 0 0 15px #fff, 0 0 20px #57cc99, 0 0 25px #57cc99, 0 0 30px #57cc99, 0 0 35px #57cc99, 0 0 40px #57cc99, 0 0 45px #57cc99;
     }
-}
+};
 
 ///////////////////////////////////////////////////////////
 ////////////////////           MAIN         ///////////////
 ///////////////////////////////////////////////////////////
 main {
     width: 100%;
-}
-
+};
 
 ///////////////////////////////////////////////////////////
 ////////////////////         FOOTER         ///////////////
 ///////////////////////////////////////////////////////////
 
-.menu__dark-mode {
-    @include large-tablet {
-        display: flex;
-        flex-direction: column;
+footer {
+    margin: 3% 0 0 0;
+    div {
+        text-align: center;
+        padding-bottom: 8px;
+        text-transform: capitalize;
+        font-size: map-get($font-size, small);
+        i {
+            color: $dark-mode-primary-color;
+        }
     }
 }

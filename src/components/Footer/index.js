@@ -3,7 +3,7 @@ import React from 'react'
 export default function Footer() {
     return (
         <footer>
-            <div>&copy; Copyright 2021</div>
+            <div>made with <i class="fas fa-heart"></i> and <i class="fas fa-beer"></i></div>
         </footer>
     )
 }

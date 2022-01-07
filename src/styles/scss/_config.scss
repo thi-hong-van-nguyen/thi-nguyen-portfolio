@@ -3,7 +3,12 @@ $dark-mode-bg: #07121b;
 $light-mode-bg: rgb(238, 236, 236);
 $dark-mode-header-bg: #1b2a41;
 $light-mode-header-bg: #00916e;
-$dark-mode-primary-color: #00916e;
+$dark-mode-primary-color: #06ac85;
+$dark-mode-button-hover-color: #066d55;
+$dark-mode-card-bg: #0a1720;
+$dark-mode-card-text-color: rgb(197, 191, 191);
+$dark-mode-card-box-shadow: 0 0 0 2px rgba(16, 37, 61, 0.3);
+$light-mode-card-bg: rgb(199, 196, 196);
 
 $desktop: 1300px;
 $large-tablet: 990px;
@@ -22,9 +27,15 @@ $font-weight: (
     'bold': 700
 );
 
+$font-size: (
+    'small': 0.8rem,
+    'regular': 1rem,
+    'large': 1.2rem
+);
+
 
 @mixin transition-ease {
-    transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease;
 };
 
 @mixin flex-row {
@@ -69,7 +80,7 @@ $font-weight: (
 
 @function set-text-color($bg-color) {
     @if($bg-color == $dark-mode-bg) {
-        @return rgb(207, 204, 204);
+        @return rgb(252, 246, 246);
     } @else {
         @return #292929;
     }

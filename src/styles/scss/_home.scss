@@ -1,27 +1,55 @@
 @import 'config';
 
-.about-me-section .skills-section {
+.about-me-section, .skills-section, .testimonials-section, .projects-section {
     width: 100%;
     overflow: hidden;
 }
+
+.about-me-section__container, .skills-section__container, .testimonials-section__container, .projects-section__container {
+    max-width: 80%;
+    margin: 0 auto;
+    padding: 2% 0;
+}
+
+.intro {
+    position: relative;
+        .topic-title {
+            padding-left: 2%;
+            vertical-align: center;
+            &::before {
+                content: '';
+                position: absolute;
+                background: $dark-mode-primary-color;
+                width: 6px;
+                height: 40px;
+                margin: 0 20px 5px;
+                left: -20px;
+            }
+        }
+}
+
+
 
 /////////////////////////////////////////////////////////////////////////
 ////////////////////////////////      BIO      ///////////////////////
 /////////////////////////////////////////////////////////////////////////
 
-
-
 .about-me-section {
     border-bottom: solid 1px rgba(179, 175, 175, 0.1);
 
     &__container {
-        max-width: 80%;
-        margin: auto;
         padding: 3% 0;
         @include flex-row;
+        flex-wrap: nowrap;
+
+        @include mobile {
+            @include flex-col;
+            border: solid 1px red;
+        }
 
         .bio {
             line-height: 30px;
+            padding-right: 3%;
             h2 {
                 font-size: 3.5rem;
             }
@@ -34,10 +62,14 @@
                 &:hover {
                     opacity: 0.9;
                 }
+                @media (max-width: 1140px) {
+                    margin: 10px 5px;
+                }
             }
             a {
                 color: $dark-mode-primary-color;
             }
+
         }
 
         .avatar {
@@ -49,6 +81,24 @@
                 object-fit: cover;
                 object-position: 50% 20%;
                 box-shadow: 0 5px 10px rgba(68, 71, 85, 0.4);
+                @include desktop {
+                    width: 300px;
+                    height: 300px;
+                }
+                @media (max-width: 1140px) {
+                    width: 250px;
+                    height: 250px;
+                }
+                @include mobile {
+                    width: 200px;
+                    height: 200px;
+                    margin: 8px;
+                }
+            }
+
+
+            @include desktop {
+
             }
         }
     }
@@ -60,45 +110,236 @@
 /////////////////////////////////////////////////////////////////////////
 
 .skills-section {
-    &__container {
-        max-width: $desktop;
-        margin: 0 auto;
-        padding: 2% 0;
-        border: solid red 1px;
 
-        .skills-intro {
-            position: relative;
-            div:first-child {
-                padding-left: 1%;
-                vertical-align: center;
-                &::before {
-                    content: '';
-                    position: absolute;
-                    background: $dark-mode-primary-color;
-                    width: 7px;
-                    height: 70%;
-                    margin: 0 20px 5px;
-                    left: -20px;
-                    bottom: 30px;
-                }
-            }
+    &__container {
+        padding: 2% 0;
+
+        .intro {
             div:nth-child(2) {
                 padding: 5px 0;
                 a {
                     color: $dark-mode-primary-color;
                 }
             }
-
         }
 
         .skills-container {
             @include flex-row;
+            align-items: flex-start;
+            text-align: left;
             width: 100%;
-            border: solid purple 1px;
+            padding-top: 20px;
             .skill{
-                width: 25%;
-                border: solid blue 1px;
+                width: 23%;
+            }
+        }
+
+        .skill {
+            div, p {
+                font-size: map-get($font-size, small);
+            }
+            h3 {
+                font-size: 1.2rem;
+                padding: 10px 0;
+            }
+            &__icon {
+                height: 38px;
+                @include flex-row;
+                justify-content: flex-start;
+            }
+            img {
+                width: 30px;
+                height: 30px;
+                margin-right: 5px;
+            }
+            .css {
+                width: 38px;
+                height: 38px;
+            }
+
+        }
+    }
+}
+
+/////////////////////////////////////////////////////////////////////////
+////////////////////////////////   TESTIMONIALS   ///////////////////////
+/////////////////////////////////////////////////////////////////////////
+
+.testimonials-section {
+    &__container {
+        border-top: solid 1px rgba(179, 175, 175, 0.1);
+        border-bottom: solid 1px rgba(179, 175, 175, 0.1);
+
+        .testimonials {
+            width: 100%;
+            padding: 3% 0;
+
+            .testimonials__cards {
+                @include flex-row;
+                .testimonial-card {
+                    position: relative;
+                    background: $dark-mode-card-bg;
+                    box-shadow: $dark-mode-card-box-shadow;
+                    width: 30%;
+                    height: 280px;
+                    padding: 3%;
+                    font-size: map-get($font-size , small);
+                    color: $dark-mode-card-text-color;
+                    &__content {
+                        @include flex-col;
+                        justify-content: space-between;
+                        height: 100%;
+                    }
+
+                    .quote-icon {
+                        position: absolute;
+                        display: inline-block;
+                        top: 0;
+                        left: 0;
+                        width: 0;
+                        height: 0;
+                        text-align: center;
+                        border-top: 40px solid $dark-mode-primary-color;
+                        border-right: 40px solid transparent;
+                        i {
+                            position: absolute;
+                            top: -33px;
+                            left: 5px;
+                            display: inline-block;
+                        }
+                    }
+
+                    &__reviewer-info {
+                        @include flex-row;
+                        width: 100%;
+                        height: 40%;
+                        img {
+                            width: 70px;
+                            height: 70px;
+                            border-radius: map-get($border-radius , image );
+                            border: solid 3px rgb(206, 203, 203);
+                        }
+                        &--info {
+                            @include flex-col;
+                            align-items: flex-start;
+                            width: 70%;
+                        }
+                    }
+                }
+            }
+            button {
+                background: $dark-mode-primary-color;
+                &:hover {
+                    background: $dark-mode-card-bg;
+                    opacity: 0.8;
+                }
+            }
+            .rec-dot {
+                &:hover {
+                    box-shadow: 0 0 1px rgba(255, 254, 254, 0.856);
+                }
+                &_active {
+                    box-shadow: 0 0 1px 3px rgba(255, 254, 254, 0.856);
+                }
             }
         }
     }
 }
+
+/////////////////////////////////////////////////////////////////////////
+//////////////////////////////////   PROJECTS   /////////////////////////
+/////////////////////////////////////////////////////////////////////////
+
+.projects-section {
+    &__container {
+        .projects-wrapper {
+            padding: 2% 0;
+            @include flex-row;
+
+            .project-card {
+                width: 48%;
+                height: 200px;
+                margin-bottom: 3%;
+                background: $dark-mode-card-bg;
+                position: relative;
+                &:hover {
+                    .card-after {
+                        display: block;
+                        position: absolute;
+                        top: 45%;
+                        left: 30%;
+                        width: 100%;
+                        height: 100%;
+                    }
+                    .card-before {
+                        transition: 0.5s ease;
+                        filter: brightness(0.4);
+                    }
+                }
+
+                h3 {
+                    font-size: map-get($font-size, regular);
+                    text-decoration: underline;
+                    padding: 2% 0;
+                }
+
+                div {
+                    font-size: map-get($font-size, small)
+                }
+
+                .card-before {
+                    @include flex-row;
+                    box-shadow: $dark-mode-card-box-shadow;
+
+                    &__img {
+                        width: 40%;
+                        height: 200px;
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        }
+                    }
+                    &__content {
+                        width: 55%;
+                        height: 100%;
+                        color: $dark-mode-card-text-color;
+                        line-height: 20px;
+                        .client {
+                            padding-top: 3%;
+                            color: rgb(117, 114, 114);
+                            font-size: 0.7rem;
+                        }
+                    }
+
+                }
+                .card-after {
+                    display: none;
+                    .btn-dark {
+                        background: #2f3847;
+                        border: solid 1px #293241;
+                        color: get-text-color($dark-mode-bg);
+                        margin: 0 1%;
+                        width: 150px;
+                        @include transition-ease;
+                        a {
+                            color: #fff;
+                            font-weight: map-get($font-weight , bold)
+                        }
+                        &:hover {
+                            background: #1a2029;
+                        }
+                    }
+                }
+            }
+        }
+
+        .portfolio {
+            text-align: center;
+            button {
+                margin: 0;
+            }
+        }
+    }
+}
+
