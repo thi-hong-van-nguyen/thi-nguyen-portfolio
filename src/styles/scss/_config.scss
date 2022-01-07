@@ -1,6 +1,6 @@
 $dark-green: #114d3f;
 $dark-mode-bg: #07121b;
-$light-mode-bg: rgb(238, 236, 236);
+$light-mode-bg: rgb(248, 244, 244);
 $dark-mode-header-bg: #1b2a41;
 $light-mode-header-bg: #00916e;
 $dark-mode-primary-color: #06ac85;
@@ -82,7 +82,7 @@ $font-size: (
     @if($bg-color == $dark-mode-bg) {
         @return rgb(252, 246, 246);
     } @else {
-        @return #292929;
+        @return #131212;
     }
 };
 

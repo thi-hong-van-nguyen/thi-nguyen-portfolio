@@ -20,7 +20,7 @@ import { testimonials, projects } from '../../data'
 
 function Home(props) {
     const navigate = useNavigate()
-    const [cardShown, setCardShown] = useState(false)
+    const { darkMode } = props
 
     useEffect(() => {
         props.getActiveKey('about-me')
@@ -33,36 +33,18 @@ function Home(props) {
     // }
 
     const breakPoints = [
-        { width: 1, itemsToShow: 1 }
+        { width: 1, itemsToShow: 1 },
+        { width: 550, itemsToShow: 2, itemsToScroll: 2, pagination: false },
+        { width: 850, itemsToShow: 3 },
+
     ];
 
-    const getTestimonials = (tes) => {
-        return (
-            tes.map((t, idx) => {
-                return (
-                    <div key={idx} className='testimonial-card' >
-                        <div className='quote-icon'><i className="fas fa-quote-left"></i></div>
-                        <div className='testimonial-card__content'>
-                            <p>{t.content}</p>
-                            <div className='testimonial-card__reviewer-info'>
-                                <img src={t.img} alt='reviewer' />
-                                <div className='testimonial-card__reviewer-info--info'>
-                                    <div className='name'>{t.reviewer}</div>
-                                    <div className='position'>{t.reviewer_position}</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                )
-            })
-        )
-    }
-
     console.log('home renders')
+    console.log('')
 
     return (
         <div className='home-wrapper'>
-            <section className='about-me-section'>
+            <section className={`about-me-section ${darkMode === 'dark' ? 'about-me-section-dark-mode' : 'about-me-section-light-mode'}`}>
                 <div className='about-me-section__container'>
                     <div className='bio'>
                         <h2>Thi Nguyen</h2>
@@ -166,20 +148,38 @@ function Home(props) {
             </section>
 
             <section className='testimonials-section'>
-                <div className='testimonials-section__container'>
+                <div
+                    className={`testimonials-section__container${darkMode === 'dark' ? '' : ' testimonials-section__container--light-mode'}`}
+                >
                     <div className='intro'>
                         <div className='topic-title'>
                             <h2>Testimonials</h2>
                         </div>
                     </div>
                     <div className='testimonials'>
-                        <Carousel breakPoints={breakPoints}>
-                            <div className='testimonials__cards' >
-                                {getTestimonials(testimonials.slice(0, 3))}
-                            </div>
-                            <div className='testimonials__cards' >
-                                {getTestimonials(testimonials.slice(3, 6))}
-                            </div>
+                        <Carousel breakPoints={breakPoints} enableInfiniteLoop enableAutoPlay>
+                            {testimonials.map((t, idx) => {
+                                return (
+                                    <div
+                                        key={idx}
+                                        className={`testimonial-card${darkMode === 'dark' ? '' : ' testimonial-card-light-mode'}`}
+                                    >
+                                        <div className='quote-icon'>
+                                            <i className="fas fa-quote-left"></i>
+                                        </div>
+                                        <div className='testimonial-card__content'>
+                                            <p>{t.content}</p>
+                                            <div className='testimonial-card__reviewer-info'>
+                                                <img src={t.img} alt='reviewer' />
+                                                <div className='testimonial-card__reviewer-info--info'>
+                                                    <div className='name'>{t.reviewer}</div>
+                                                    <div className='position'>{t.reviewer_position}</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                )
+                            })}
                         </Carousel>
                     </div>
                 </div>
@@ -195,12 +195,8 @@ function Home(props) {
                     <div className='projects-wrapper'>
                         {projects.map((p, idx) => {
                             return (
-                                <div key={idx} className='project-card'>
-                                    <div
-                                        className='card-before'
-                                        onMouseEnter={() => setCardShown(true)}
-                                        onMouseLeave={() => setCardShown(false)}
-                                    >
+                                <div key={idx} className={`project-card${darkMode === 'dark' ? '' : ' project-card-light-mode'}`}>
+                                    <div className='card-before' >
                                         <div className='card-before__img'>
                                             <img src={p.img_url} alt='project' />
                                         </div>
@@ -211,11 +207,11 @@ function Home(props) {
                                         </div>
                                     </div>
                                     <div className='card-after'>
-                                        <button type="button" class="btn btn-dark">
+                                        <button type="button" class="btn btn-dark btn-site">
                                             <i class="fas fa-eye"></i>
                                             <a href={p.site}>View Site</a>
                                         </button>
-                                        <button type="button" class="btn btn-dark">
+                                        <button type="button" class="btn btn-dark btn-code">
                                             <i class="fas fa-eye"></i>
                                             <a href={p.code}>View Code</a>
                                         </button>
@@ -241,4 +237,10 @@ function Home(props) {
     )
 }
 
-export default connect(null, { getActiveKey })(Home)
+const mapStateToProps = state => {
+    return ({
+        darkMode: state.darkModeReducer.darkMode
+    })
+}
+
+export default connect(mapStateToProps, { getActiveKey })(Home)

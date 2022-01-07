@@ -28,8 +28,6 @@
         }
 }
 
-
-
 /////////////////////////////////////////////////////////////////////////
 ////////////////////////////////      BIO      ///////////////////////
 /////////////////////////////////////////////////////////////////////////
@@ -44,7 +42,6 @@
 
         @include mobile {
             @include flex-col;
-            border: solid 1px red;
         }
 
         .bio {
@@ -105,6 +102,10 @@
 
 }
 
+.about-me-section-light-mode {
+    background: #dfe1e6;
+}
+
 /////////////////////////////////////////////////////////////////////////
 ////////////////////////////////      SKILLS      ///////////////////////
 /////////////////////////////////////////////////////////////////////////
@@ -131,6 +132,9 @@
             padding-top: 20px;
             .skill{
                 width: 23%;
+                @include tablet {
+                    width: 48%;
+                }
             }
         }
 
@@ -139,8 +143,8 @@
                 font-size: map-get($font-size, small);
             }
             h3 {
-                font-size: 1.2rem;
-                padding: 10px 0;
+                font-size: map-get($font-size, large);
+                padding: 10px 0 0 0;
             }
             &__icon {
                 height: 38px;
@@ -172,23 +176,28 @@
 
         .testimonials {
             width: 100%;
-            padding: 3% 0;
+            padding: 2% 0 3% 0;
 
-            .testimonials__cards {
-                @include flex-row;
+                .rec-carousel-item {
+                    height: 100%;
+                    .rec-item-wrapper {
+                        height: 100%;
+                    }
+                }
                 .testimonial-card {
                     position: relative;
                     background: $dark-mode-card-bg;
-                    box-shadow: $dark-mode-card-box-shadow;
-                    width: 30%;
-                    height: 280px;
+                    width: 100%;
+                    height: 100%;
+                    margin: 5%;
                     padding: 3%;
                     font-size: map-get($font-size , small);
                     color: $dark-mode-card-text-color;
                     &__content {
                         @include flex-col;
                         justify-content: space-between;
-                        height: 100%;
+                        height: 80%;
+                        padding: 8% 5% 0 7%;
                     }
 
                     .quote-icon {
@@ -199,12 +208,12 @@
                         width: 0;
                         height: 0;
                         text-align: center;
-                        border-top: 40px solid $dark-mode-primary-color;
-                        border-right: 40px solid transparent;
+                        border-top: 50px solid $dark-mode-primary-color;
+                        border-right: 50px solid transparent;
                         i {
                             position: absolute;
-                            top: -33px;
-                            left: 5px;
+                            top: -40px;
+                            left: 8px;
                             display: inline-block;
                         }
                     }
@@ -212,7 +221,8 @@
                     &__reviewer-info {
                         @include flex-row;
                         width: 100%;
-                        height: 40%;
+                        height: 30%;
+                        padding-bottom: 10%;
                         img {
                             width: 70px;
                             height: 70px;
@@ -223,10 +233,15 @@
                             @include flex-col;
                             align-items: flex-start;
                             width: 70%;
+                            padding: 8px;
                         }
                     }
                 }
-            }
+                .testimonial-card-light-mode {
+                    background: rgb(235, 235, 235);
+                    color: set-text-color($light-mode-bg);
+                }
+
             button {
                 background: $dark-mode-primary-color;
                 &:hover {
@@ -244,6 +259,11 @@
             }
         }
     }
+
+    &__container--light-mode {
+        border-top: solid 1px rgba(77, 72, 72, 0.3);
+        border-bottom: solid 1px rgba(77, 72, 72, 0.3);
+    }
 }
 
 /////////////////////////////////////////////////////////////////////////
@@ -258,29 +278,33 @@
 
             .project-card {
                 width: 48%;
-                height: 200px;
                 margin-bottom: 3%;
                 background: $dark-mode-card-bg;
                 position: relative;
                 &:hover {
                     .card-after {
-                        display: block;
+                        opacity: 1;
                         position: absolute;
-                        top: 45%;
-                        left: 30%;
+                        left: 0;
+                        top: 0;
+                        text-align: center;
                         width: 100%;
                         height: 100%;
+                        @include flex-row;
+                        @media (max-width: 1630px) {
+                            @include flex-col;
+                        }
                     }
                     .card-before {
                         transition: 0.5s ease;
-                        filter: brightness(0.4);
+                        filter: brightness(0.3);
                     }
                 }
 
                 h3 {
-                    font-size: map-get($font-size, regular);
+                    font-size: map-get($font-size, large);
                     text-decoration: underline;
-                    padding: 2% 0;
+                    padding: 3% 0 0 0;
                 }
 
                 div {
@@ -289,11 +313,10 @@
 
                 .card-before {
                     @include flex-row;
-                    box-shadow: $dark-mode-card-box-shadow;
+                    align-items: stretch;
 
                     &__img {
                         width: 40%;
-                        height: 200px;
                         img {
                             width: 100%;
                             height: 100%;
@@ -301,7 +324,7 @@
                         }
                     }
                     &__content {
-                        width: 55%;
+                        width: 58%;
                         height: 100%;
                         color: $dark-mode-card-text-color;
                         line-height: 20px;
@@ -312,14 +335,28 @@
                         }
                     }
 
+                    @media (max-width: 1630px) {
+                        @include flex-col;
+
+                        &__img {
+                            width: 100%;
+                            height: 300px;
+                        }
+                        &__content {
+                            width: 100%;
+                            height: 180px;
+                            padding: 3% 0;
+                        }
+                    }
                 }
+
                 .card-after {
-                    display: none;
+                    opacity: 0;
+                    height: 0;
                     .btn-dark {
-                        background: #2f3847;
+                        background: #353e4d;
                         border: solid 1px #293241;
                         color: get-text-color($dark-mode-bg);
-                        margin: 0 1%;
                         width: 150px;
                         @include transition-ease;
                         a {
@@ -329,6 +366,61 @@
                         &:hover {
                             background: #1a2029;
                         }
+                    }
+                    .btn-site {
+                        margin-left: 20%;
+                    }
+                    .btn-code {
+                        margin-right: 20%;
+                    }
+
+                    @media (max-width: 1630px) {
+                        .btn-site {
+                            margin-left: 0;
+                     }
+                        .btn-code {
+                            margin-right:0;
+                        }
+                    }
+                }
+            }
+
+            .project-card-light-mode {
+                background: rgb(243, 241, 241);
+                h3, div {
+                    color: set-text-color($light-mode-bg);
+                }
+                border: solid 1px rgb(216, 213, 213);
+                @media (max-width: 1630px) {
+                    .card-before {
+                        &__content {
+                            padding-left: 3%;
+                        }
+                    }
+                }
+
+                &:hover {
+                    .card-before {
+                        background: rgb(153, 153, 153);
+                    }
+                }
+            }
+
+            @include large-tablet {
+                .project-card {
+                    width: 45%;
+                    margin-bottom: 5%;
+                }
+            }
+
+            @include tablet {
+                @include flex-col;
+                width: 100%;
+
+                .project-card {
+                    width: 100%;
+                    .card-before{
+                        width: 100%;
                     }
                 }
             }
