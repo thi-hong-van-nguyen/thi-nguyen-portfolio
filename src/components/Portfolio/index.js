@@ -10,7 +10,14 @@ function Portfolio(props) {
     }, [])
 
     return (
-        <div className='portfolio'>portfolio</div>
+        <div className='portfolio-wrapper'>
+            <section className='intro-section'>
+
+            </section>
+            <section className='project-section'>
+
+            </section>
+        </div>
     )
 }
 
