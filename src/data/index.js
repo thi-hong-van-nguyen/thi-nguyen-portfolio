@@ -1,8 +1,7 @@
 import ehsan from '../photos/ehsan.PNG'
-import anywherefitness from '../photos/anywherefitness.PNG'
 import coderheroes from '../photos/coderheroes.PNG'
-import petadopt from '../photos/petadopt.PNG'
-import potluck from '../photos/potluck.jpg'
+import fitness from '../photos/fitness.jpeg'
+import pot from '../photos/pot.jfif'
 
 export const testimonials = [
     {
@@ -55,7 +54,7 @@ export const projects = [
     },
     {
         title: 'Anywhere Fitness',
-        img_url: anywherefitness,
+        img_url: fitness,
         content: 'An individual project covered from front end to backend whose product is a React web application for clients to register and health coaches to create fitness classes anywhere around the nation',
         client: 'Bloom Tech',
         site: 'https://anywhere-fitness-frontend.herokuapp.com/',
@@ -64,7 +63,7 @@ export const projects = [
     },
     {
         title: 'Potluck Planner',
-        img_url: potluck,
+        img_url: pot,
         content: 'A group project resulted in a web page that allows logged in users to create potlucks and invite guests, and logged in guests can choose to accept or refuse',
         client: 'Bloom Tech',
         site: 'https://github.com/Build-Week-Potluck-Planner-4',
@@ -73,7 +72,7 @@ export const projects = [
     },
     {
         title: 'Pets Adoption',
-        img_url: petadopt,
+        img_url: 'https://www.litter-robot.com/blog/wp-content/uploads/2016/01/girl-and-cat-2-1080-510x339.jpg',
         content: 'An individual project covered from front end to backend whose product is a React web application for clients to register and health coaches to create fitness classes anywhere around the nation',
         client: 'Bloom Tech',
         site: 'https://pets-adopt.vercel.app/',

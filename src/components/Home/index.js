@@ -157,7 +157,8 @@ function Home(props) {
                         </div>
                     </div>
                     <div className='testimonials'>
-                        <Carousel breakPoints={breakPoints} enableInfiniteLoop enableAutoPlay>
+                        <Carousel breakPoints={breakPoints}>
+                            {/* <Carousel breakPoints={breakPoints} enableInfiniteLoop enableAutoPlay> */}
                             {testimonials.map((t, idx) => {
                                 return (
                                     <div
@@ -209,11 +210,11 @@ function Home(props) {
                                     <div className='card-after'>
                                         <button type="button" class="btn btn-dark btn-site">
                                             <i class="fas fa-eye"></i>
-                                            <a href={p.site}>View Site</a>
+                                            <a href={p.site} target='blank'>View Site</a>
                                         </button>
                                         <button type="button" class="btn btn-dark btn-code">
                                             <i class="fas fa-eye"></i>
-                                            <a href={p.code}>View Code</a>
+                                            <a href={p.code} target='blank'>View Code</a>
                                         </button>
                                     </div>
                                 </div>
