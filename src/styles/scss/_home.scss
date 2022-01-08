@@ -1,26 +1,5 @@
 @import 'config';
 
-.about-me-section,
-.skills-section,
-.testimonials-section,
-.projects-section,
-.intro-section,
-.portfolio-section {
-    width: 100%;
-    overflow: hidden;
-}
-
-.about-me-section__container,
-.skills-section__container,
-.testimonials-section__container,
-.projects-section__container,
-.intro-section__container,
-.portfolio-section__container {
-    max-width: 80%;
-    margin: 0 auto;
-    padding: 2% 0;
-}
-
 .intro {
     position: relative;
         .topic-title {
@@ -43,7 +22,7 @@
 /////////////////////////////////////////////////////////////////////////
 
 .about-me-section {
-    border-bottom: solid 1px rgba(179, 175, 175, 0.1);
+    border-bottom: solid 1px rgba(105, 105, 105, 0.3);
 
     &__container {
         padding: 3% 0;
@@ -103,17 +82,13 @@
                 }
             }
 
-
-            @include desktop {
-
-            }
         }
     }
 
 }
 
 .about-me-section-light-mode {
-    background: #dfe1e6;
+    background: $light-mode-top-section-bg;
 }
 
 /////////////////////////////////////////////////////////////////////////
@@ -204,7 +179,6 @@
                     font-size: map-get($font-size , small);
                     color: $dark-mode-card-text-color;
                     &__content {
-                        border: red solid 1px;
                         @include flex-col;
                         justify-content: space-between;
                         height: 90%;
@@ -232,7 +206,6 @@
                     &__reviewer-info {
                         @include flex-row;
                         width: 100%;
-                        border: red solid 1px;
                         img {
                             width: 70px;
                             height: 70px;
@@ -253,7 +226,8 @@
                 }
 
                 .testimonial-card-light-mode {
-                    background: rgb(235, 235, 235);
+                    background: rgb(202, 200, 200);
+                    box-shadow: $light-mode-card-box-shadow;
                     color: set-text-color($light-mode-bg);
                 }
 
@@ -270,7 +244,6 @@
                    display: none;
                 }
             }
-
 
             .rec-dot {
                 &:hover {
@@ -304,6 +277,9 @@
                 margin-bottom: 3%;
                 background: $dark-mode-card-bg;
                 position: relative;
+                box-shadow: $project-card-box-shadow;
+                cursor: pointer;
+
                 &:hover {
                     .card-after {
                         opacity: 1;
@@ -314,11 +290,13 @@
                         width: 100%;
                         height: 100%;
                         @include flex-row;
-                        @media (max-width: 1630px) {
+
+                        @include large-desktop {
                             @include flex-col;
                         }
                     }
                     .card-before {
+                        background: rgb(65, 63, 63);
                         transition: 0.5s ease;
                         filter: brightness(0.3);
                     }
@@ -336,7 +314,6 @@
 
                 .card-before {
                     @include flex-row;
-                    align-items: stretch;
 
                     &__img {
                         width: 40%;
@@ -359,7 +336,7 @@
                         }
                     }
 
-                    @media (max-width: 1630px) {
+                    @include large-desktop {
                         @include flex-col;
 
                         &__img {
@@ -369,27 +346,14 @@
                         &__content {
                             width: 100%;
                             height: 200px;
-                            // padding: 3% 0;
                         }
                     }
                 }
-
                 .card-after {
                     opacity: 0;
                     height: 0;
                     .btn-dark {
-                        background: #353e4d;
-                        border: solid 1px #293241;
-                        color: get-text-color($dark-mode-bg);
-                        width: 150px;
-                        @include transition-ease;
-                        a {
-                            color: #fff;
-                            font-weight: map-get($font-weight , bold)
-                        }
-                        &:hover {
-                            background: #1a2029;
-                        }
+                        @include project-card-button;
                     }
                     .btn-site {
                         margin-left: 20%;
@@ -398,10 +362,10 @@
                         margin-right: 20%;
                     }
 
-                    @media (max-width: 1630px) {
+                    @include large-desktop {
                         .btn-site {
                             margin-left: 0;
-                     }
+                        }
                         .btn-code {
                             margin-right:0;
                         }
@@ -409,19 +373,14 @@
                 }
             }
 
+
             .project-card-light-mode {
                 background: rgb(243, 241, 241);
+                box-shadow: $light-mode-card-box-shadow;
                 h3, div {
                     color: set-text-color($light-mode-bg);
                 }
                 border: solid 1px rgb(216, 213, 213);
-                // @media (max-width: 1630px) {
-                //     .card-before {
-                //         &__content {
-                //             // padding-left: 3%;
-                //         }
-                //     }
-                // }
 
                 &:hover {
                     .card-before {
@@ -429,15 +388,6 @@
                     }
                 }
             }
-
-            // @media (max-width: 1630px) {
-            //     height: 300px;
-            //     .card-before {
-            //         &__content {
-            //             // padding:
-            //         };
-            //     }
-            // }
 
             @include large-tablet {
                 .project-card {
@@ -452,8 +402,14 @@
 
                 .project-card {
                     width: 100%;
+                    margin-bottom: 50px;
+                    border-radius: map-get($border-radius, btn);
                     .card-before{
                         width: 100%;
+                        img {
+                            border-top-left-radius: map-get($border-radius, btn);
+                            border-top-right-radius: map-get($border-radius, btn);
+                        }
                     }
                 }
             }

@@ -1,19 +1,24 @@
 $dark-green: #114d3f;
 $dark-mode-bg: #07121b;
-$light-mode-bg: rgb(248, 244, 244);
 $dark-mode-header-bg: #1b2a41;
-$light-mode-header-bg: #00916e;
 $dark-mode-primary-color: #06ac85;
 $dark-mode-button-hover-color: #066d55;
-$dark-mode-card-bg: #0a1720;
+$dark-mode-card-bg: rgb(7, 32, 46);
 $dark-mode-card-text-color: rgb(197, 191, 191);
-$dark-mode-card-box-shadow: 0 0 0 2px rgba(16, 37, 61, 0.3);
-$light-mode-card-bg: rgb(199, 196, 196);
+
+$light-mode-bg: rgb(248, 244, 244);
+$light-mode-header-bg: #00916e;
+$light-mode-card-bg: rgb(226, 222, 222);
+$light-mode-card-box-shadow: 0 2px 5px rgba(63, 61, 61, 0.3);
+$light-mode-top-section-bg: #dfe1e6;
+
+$project-card-box-shadow: 0 0 5px rgba(156, 150, 150, 0.3);
 
 $desktop: 1300px;
 $large-tablet: 990px;
 $tablet: 800px;
 $mobile: 660px;
+$large-desktop: 1630px;
 
 $border-radius: (
     'image': 100%,
@@ -54,6 +59,21 @@ $font-size: (
     width: 100%
 }
 
+@mixin project-card-button {
+    background: #353e4d;
+    border: solid 1px #293241;
+    color: get-text-color($dark-mode-bg);
+    width: 150px;
+    @include transition-ease;
+    a {
+        color: #fff;
+        font-weight: map-get($font-weight , bold)
+    }
+    &:hover {
+        background: #1a2029;
+    }
+}
+
 @mixin mobile {
     @media (max-width: $mobile) {
         @content;
@@ -78,6 +98,12 @@ $font-size: (
     }
 }
 
+@mixin large-desktop {
+    @media (max-width: $large-desktop) {
+        @content;
+    }
+}
+
 @function set-text-color($bg-color) {
     @if($bg-color == $dark-mode-bg) {
         @return rgb(236, 233, 233);
@@ -85,5 +111,6 @@ $font-size: (
         @return #131212;
     }
 };
+
 
 

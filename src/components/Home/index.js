@@ -79,7 +79,7 @@ function Home(props) {
                 <div className='skills-section__container'>
                     <div className='intro'>
                         <div className='topic-title'>
-                            <h2>What I Use For My Projects</h2>
+                            <h2>What I master</h2>
                         </div>
                         <div>Below is a quick overview of my main technical skill sets and technologies I use. Check out my <Link to='/portfolio'>portfolio</Link> and <Link to='/resume'>online resume</Link> for more information.</div>
                     </div>
@@ -157,8 +157,7 @@ function Home(props) {
                         </div>
                     </div>
                     <div className='testimonials'>
-                        <Carousel breakPoints={breakPoints}>
-                            {/* <Carousel breakPoints={breakPoints} enableInfiniteLoop enableAutoPlay> */}
+                        <Carousel breakPoints={breakPoints} enableInfiniteLoop enableAutoPlay>
                             {testimonials.map((t, idx) => {
                                 return (
                                     <div
@@ -208,12 +207,12 @@ function Home(props) {
                                         </div>
                                     </div>
                                     <div className='card-after'>
-                                        <button type="button" class="btn btn-dark btn-site">
-                                            <i class="fas fa-eye"></i>
+                                        <button type="button" className="btn btn-dark btn-site">
+                                            <i className="fas fa-eye"></i>
                                             <a href={p.site} target='blank'>View Site</a>
                                         </button>
-                                        <button type="button" class="btn btn-dark btn-code">
-                                            <i class="fas fa-eye"></i>
+                                        <button type="button" className="btn btn-dark btn-code">
+                                            <i className="fas fa-eye"></i>
                                             <a href={p.code} target='blank'>View Code</a>
                                         </button>
                                     </div>
@@ -224,10 +223,10 @@ function Home(props) {
                     <div className='portfolio'>
                         <button
                             type="button"
-                            class="btn btn-primary"
+                            className="btn btn-primary"
                             onClick={() => navigate('/portfolio')}
                         >
-                            <i class="fas fa-arrow-circle-right"></i>
+                            <i className="fas fa-arrow-circle-right"></i>
                             View Portfolio
                         </button>
                     </div>

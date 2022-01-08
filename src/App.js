@@ -14,10 +14,19 @@ import './styles/css/App.css'
 function App(props) {
   const { darkMode } = props
 
+  const root = document.querySelector('#root')
+  if (darkMode === 'dark') {
+    root.classList.remove('light-mode')
+    root.classList.add('dark-mode')
+  } else {
+    root.classList.remove('dark-mode')
+    root.classList.add('light-mode')
+  }
+
   console.log('app redners')
 
   return (
-    <div className={`App ${darkMode === 'dark' ? 'dark-mode' : 'light-mode'}`}>
+    <div className='App'>
       <Header />
       <div className='main-wrapper'>
         <main>

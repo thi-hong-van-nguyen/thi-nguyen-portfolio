@@ -281,6 +281,27 @@ main {
     width: 100%;
 };
 
+.about-me-section,
+.skills-section,
+.testimonials-section,
+.projects-section,
+.intro-section,
+.portfolio-section {
+    width: 100%;
+    overflow: hidden;
+}
+
+.about-me-section__container,
+.skills-section__container,
+.testimonials-section__container,
+.projects-section__container,
+.intro-section__container,
+.portfolio-section__container {
+    max-width: 85%;
+    margin: 0 auto;
+    padding: 2% 0;
+}
+
 ///////////////////////////////////////////////////////////
 ////////////////////         FOOTER         ///////////////
 ///////////////////////////////////////////////////////////
