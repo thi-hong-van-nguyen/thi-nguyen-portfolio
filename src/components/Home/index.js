@@ -27,20 +27,12 @@ function Home(props) {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
-
-    // const handleClick = () => {
-    //     navigate('/portfolio')
-    // }
-
     const breakPoints = [
         { width: 1, itemsToShow: 1 },
         { width: 550, itemsToShow: 2, itemsToScroll: 2, pagination: false },
         { width: 850, itemsToShow: 3 },
 
     ];
-
-    console.log('home renders')
-    console.log('')
 
     return (
         <div className='home-wrapper'>
@@ -193,7 +185,7 @@ function Home(props) {
                         </div>
                     </div>
                     <div className='projects-wrapper'>
-                        {projects.map((p, idx) => {
+                        {projects.slice(1, 5).map((p, idx) => {
                             return (
                                 <div key={idx} className={`project-card${darkMode === 'dark' ? '' : ' project-card-light-mode'}`}>
                                     <div className='card-before' >

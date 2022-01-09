@@ -6,11 +6,9 @@ import { tabs, projects } from '../../data'
 
 function Portfolio(props) {
     const [key, setKey] = useState(0)
-    const [list, setList] = useState(projects)
+    const [list, setList] = useState(projects.slice(1, 5))
     const { darkMode } = props
 
-    console.log('portfolio renders')
-    console.log('>>>>>>>>>>>>>>>>>>>', darkMode)
     useEffect(() => {
         props.getActiveKey('portfolio')
         // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -19,7 +17,7 @@ function Portfolio(props) {
     const handleClick = index => {
         setKey(index)
         if (index === 0) {
-            setList(projects)
+            setList(projects.slice(1, 5))
         } else if (index === 1) {
             setList(projects.filter(p => p.type === 'full stack'))
         } else if (index === 2) {

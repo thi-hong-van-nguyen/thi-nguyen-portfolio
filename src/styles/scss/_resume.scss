@@ -1,0 +1,439 @@
+$border: solid 2px rgba(124, 124, 124, 0.7);
+$thin-border: solid 1px rgba(225, 225, 225, 0.5);
+$dot-color: rgba(124, 124, 124, 1);
+
+.resume-content {
+    text-align: center;
+}
+
+/////////////////////////////////////////////////////////////////////////
+//////////////////////////   TOP     ////////////////////////////////
+////////////////////////////////////////////////////////////////////////
+.resume-wrapper {
+    .top-section {
+        animation: top-ani 1s ease-in-out;
+    }
+
+    .top-section-light-mode {
+        background: $light-mode-top-section-bg;
+    }
+}
+
+/////////////////////////////////////////////////////////////////////////
+//////////////////////////   BOTTOM     ////////////////////////////////
+/////////////////////////////////////////////////////////////////////////
+.bottom-section {
+    animation: rotateY-anim 1s ease-in-out;
+
+    // GENERAL CSS
+    h3 {
+        font-weight: map-get($font-weight, bold);
+        font-size: 1.5rem;
+        color: $dark-mode-primary-color;
+    }
+
+    h4 {
+        font-weight: map-get($font-weight, bold);
+        font-size: map-get($font-size, regular);
+        color: #16856b;
+    }
+
+    ul {
+        margin-left: 25px;
+    }
+
+    .resume-item-card {
+        padding-bottom: 10px;
+    }
+
+    a {
+        color: inherit;
+        cursor: pointer;
+
+        &:hover {
+            text-decoration: underline;
+            color: $dark-mode-primary-color;
+        }
+    }
+
+    .profile, .resume-content__bottom--right {
+        padding-left: 40px;
+    }
+
+    .contact, .resume-content__bottom--left {
+        padding-right: 40px;
+    }
+
+    .summary {
+        font-style: italic;
+    }
+
+
+    .work-experience, .projects {
+        li {
+            color: rgba(225, 225, 225, 0.7);
+            padding-top: 6px;
+        }
+    }
+
+    // DETAIL CSS
+    .resume {
+        font-size: map-get($font-size, small );
+        width: 80%;
+        margin: 0 auto;
+        background: $dark-mode-card-bg;
+        color: set-text-color($dark-mode-bg);
+        margin-top: 25px;
+
+        &__intro {
+            position: relative;
+            z-index: 10;
+            background: $dark-mode-card-bg;
+            @include flex-row;
+            padding: 25px 50px;
+            overflow: hidden;
+
+            &:after {
+                position: absolute;
+                display: block;
+                width: 100%;
+                height: 100%;
+                content: '';
+                background: rgb(2, 2, 2);
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                z-index: -1;
+                transform-origin: left bottom;
+                transform: skewY(-8deg);
+
+                @include desktop {
+                    transform: skewY(-10deg)
+                }
+            }
+
+                .avatar {
+                    @include flex-row;
+                    justify-content: center;
+                    width: 40%;
+                    img {
+                        width: 180px;
+                        height: 180px;
+                        object-fit: cover;
+                        border-radius: map-get($border-radius, image);
+                        filter: brightness(0.7);
+                        transform: rotateY(180deg);
+                    }
+                }
+
+                .intro-content {
+                    flex: 1;
+                    text-align: left;
+
+                    .career {
+                        font-size: map-get($font-size, large);
+                    }
+                }
+        }
+
+        &__content {
+            padding: 0 50px;
+            &--container {
+                @include flex-col;
+
+                .resume-content__top {
+                    border-bottom: $border;
+                    @include flex-row;
+                    align-items: flex-start;
+                    padding-bottom: 30px;
+
+                    .contact {
+                        width: 250px;
+                        border-right: $border;
+
+                        &__content {
+                            @include flex-col;
+                            .navigation-item {
+                                width: 210px;
+                                font-size: map-get($font-size, small);
+                                i {
+                                    margin-right: 10px;
+                                    width: 10px;
+                                    color: set-text-color($dark-mode-bg);
+                                }
+                            }
+
+                        }
+
+                        @include large-desktop {
+                            border-right: none;
+                        }
+                    }
+
+                    .profile {
+                        flex: 1;
+                        padding: 0 40px;
+
+                        @include large-desktop {
+                            border-left: $border;
+                        }
+                    }
+                }
+
+                .resume-content__bottom {
+                    margin: 35px 0;
+                    @include flex-row;
+                    align-items: flex-start;
+
+                    .dot {
+                        width: 10px;
+                        height: 10px;
+                        background: $dot-color;
+                        border-radius: map-get($border-radius, image);
+                        position: absolute;
+                        right: -6px;
+                    }
+
+                    .dot1 {
+                        top: 10%;
+                    }
+
+                    .dot2 {
+                        top: 40%;
+                    }
+
+                    .dot3 {
+                        top: 75%;
+                    }
+
+                    &--left {
+                        position: relative;
+                        // width: 25%;
+                        width: 250px;
+                        border-right: $border;
+
+                        @include large-desktop {
+                            border-right: none;
+                        }
+
+                        .education {
+                            border-top: $thin-border;
+                            padding-top: 30px;
+                            &__content {
+                                .school {
+                                    padding-bottom: 20px;
+                                }
+                            }
+
+                        }
+                    }
+
+                    &--right {
+                        flex: 1;
+
+                        @include large-desktop {
+                            border-left: $border;
+                        }
+
+                        .projects {
+                            .project {
+                                &__title{
+                                    @include flex-row;
+                                    align-items: flex-start;
+                                    width: 100%;
+
+
+                                    &--left {
+                                        flex:1;
+                                        @include flex-row;
+                                        justify-content: flex-start;
+                                        align-items: flex-start;
+                                        h4 {
+                                            padding-right: 7px;
+                                        }
+                                        div {
+                                            padding-top: 2px;
+                                            font-size: 0.7rem;
+                                        }
+                                    }
+
+                                    &--right {
+                                        flex:1;
+                                        @include flex-row;
+                                        justify-content: flex-end;
+                                        align-items: flex-start;
+                                        a, span {
+                                            padding-left: 5px;
+                                        }
+                                    }
+                                }
+
+                                &__content {
+                                    font-style: italic;
+                                }
+                            }
+                        }
+
+                    }
+                }
+
+            }
+        }
+    }
+
+    @include large-desktop {
+        .resume {
+            width: 100%;
+        }
+    }
+
+    @media (max-width: 1425px) {
+        .resume {
+            &__intro {
+                padding: 25px;
+            }
+
+            &__content {
+                padding: 0 25px;
+                &--container {
+                    .resume-content__top {
+                        width: 100%;
+                        @include flex-col;
+                        .contact {
+                            width: 100%;
+                            @include flex-col;
+                            align-items: center;
+                            text-align: center;
+                            &__content {
+                                width: 210px;
+                                text-align: left;
+                            }
+                        }
+
+                        .profile {
+                            @include flex-col;
+                            border-left: none;
+                            padding-left: 0;
+                            margin-top: 20px;
+                        }
+                    }
+
+                    .resume-content__bottom--left {
+                        width: 230px;
+                    }
+                }
+            }
+        }
+    }
+
+    @include large-desktop {
+        .resume-content__bottom--right {
+            padding-left: 20px;
+            margin-right: 0;
+            padding-right: 0;
+        }
+
+        .resume-content__bottom--left {
+            padding-right: 20px;
+        }
+
+    }
+
+    @media (max-width: 1200px) {
+        .resume {
+            &__content {
+                &--container {
+                    .resume-content__bottom--left {
+                        width: 200px;
+                        padding-right: 5px;
+                    }
+                }
+            }
+        }
+    }
+
+    @include mobile {
+        .resume {
+            &__content {
+                &--container {
+                    .resume-content__bottom {
+
+                        @include flex-col;
+                        &--left {
+                            width: 100%;
+
+                            .dot {
+                                display: none;
+                            }
+
+                            .skills {
+                                &__content {
+                                    @include flex-row;
+                                    align-items: flex-start;
+                                    width: 100%;
+
+                                    .skill {
+                                        width: 48%;
+                                    }
+                                }
+                            }
+
+                            .education {
+                                &__content {
+                                    @include flex-row;
+                                    align-items: flex-start;
+                                    width: 100%;
+
+                                    .school {
+                                        width: 45%;
+                                    }
+                                }
+                                border-bottom: $thin-border;
+                            }
+                        }
+
+                        &--right {
+                            width: 100%;
+                            border-left: none;
+                            padding-left: 0;
+
+                            .projects, .work-experience {
+                                padding-top: 30px;
+                            }
+
+                            .projects {
+                                border-bottom: $thin-border;
+                            }
+
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@keyframes top-ani {
+    0% {
+        opacity: 0;
+        transform: translateX(10%) scale(1);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0%) scale(1);
+    }
+}
+
+@keyframes rotateY-anim {
+    0% {
+        opacity: 0;
+        transform: translateX(-10%) scale(1);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0%) scale(1);
+    }
+}

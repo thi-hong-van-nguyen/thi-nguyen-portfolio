@@ -35,9 +35,6 @@ function Header(props) {
 
     }
 
-    console.log('header renders')
-    console.log('darkmode:', darkMode, 'localstorage:', localStorage.getItem('dark-mode'))
-
     return (
         <header className={darkMode === 'dark' ? 'header__dark' : 'header__light'}>
             <div className='menu'>

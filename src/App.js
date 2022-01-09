@@ -23,8 +23,6 @@ function App(props) {
     root.classList.add('light-mode')
   }
 
-  console.log('app redners')
-
   return (
     <div className='App'>
       <Header />
