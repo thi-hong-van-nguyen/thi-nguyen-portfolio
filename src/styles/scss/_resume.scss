@@ -11,6 +11,7 @@ $dot-color: rgba(124, 124, 124, 1);
 ////////////////////////////////////////////////////////////////////////
 .resume-wrapper {
     .top-section {
+
         animation: top-ani 1s ease-in-out;
     }
 
@@ -116,14 +117,15 @@ $dot-color: rgba(124, 124, 124, 1);
                 .avatar {
                     @include flex-row;
                     justify-content: center;
-                    width: 40%;
+                    width: 50%;
                     img {
-                        width: 180px;
-                        height: 180px;
+                        width: 200px;
+                        height: 200px;
                         object-fit: cover;
                         border-radius: map-get($border-radius, image);
                         filter: brightness(0.7);
                         transform: rotateY(180deg);
+                        border: solid 10px $dark-mode-primary-color;
                     }
                 }
 
@@ -355,8 +357,23 @@ $dot-color: rgba(124, 124, 124, 1);
 
     @include mobile {
         .resume {
+            &__intro {
+                padding-bottom: 50px;
+                .avatar {
+                    position: relative;
+                    img {
+                    position: absolute;
+                    top: -60px;
+                    width: 120px;
+                    height: 120px;
+                    border: solid 3px $dark-mode-primary-color;
+                    }
+                }
+            }
             &__content {
                 &--container {
+
+
                     .resume-content__bottom {
 
                         @include flex-col;
@@ -408,6 +425,16 @@ $dot-color: rgba(124, 124, 124, 1);
 
                         }
                     }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 600px) {
+        .resume {
+            &__intro {
+                .avatar {
+                    display: none;
                 }
             }
         }

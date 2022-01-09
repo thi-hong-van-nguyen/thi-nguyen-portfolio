@@ -138,68 +138,6 @@ export const tabs = [
     }
 ]
 
-// export const resume = [
-//     {
-//         name: 'Portfolio',
-//         time: '01/2022',
-//         code: 'https://github.com/thi-hong-van-nguyen/thi-nguyen-portfolio',
-//         site: 'https://awesome-hawking-0d87df.netlify.app/',
-//         overview: 'Personal portfolio website',
-//         details: [
-//             'Created responsive and reusable css components using SASS and Bootstrap',
-//             'Adopted Redux and React hooks to store darkmode and active navigation menu item',
-//         ]
-//     },
-//     {
-//         name: 'Coder Heroes ',
-//         time: '12/2021',
-//         code: 'https://github.com/thi-hong-van-nguyen/coder-heroes-fe',
-//         site: '',
-//         overview: 'Group project - A web application for a real non-profit organization, Code Your Dreams,  to aid in the cause of helping underprivileged youth in the Chicagoland area break into tech by offering coding courses',
-//         details: [
-//             'Implemented Agile Methodology to constantly deliver working products after each Sprint. Closely interacted with stakeholders to have a clear vision of the product and to build backlogs. Conducted everyday stand up to keep all members up to date. All members committed to welcome any changes in the development phase',
-//             'Frequently communicated and collaborated with back end engineers to determine database schema and data structure, and with UX engineers to decide frameworks and design for the app',
-//             'Wrote codes to build payment feature using Stripe, for both front end and back end ',
-//             'Utilized Ant Design to ensure unified and high quality design of the application',
-//             'Contributed in reviewing, resolving conflicts and approving Pull Requests on GitHub'
-//         ]
-//     },
-//     {
-//         name: 'Anywhere Fitness',
-//         time: '10/2021',
-//         code: 'https://github.com/anywhere-fitness-project',
-//         site: 'https://anywhere-fitness-frontend.herokuapp.com/',
-//         overview: 'An individual project covered from front end to backend whose product is a React web application for clients to register and health coaches to create fitness classes anywhere around the nation',
-//         details: [
-//             'Built a maintainable application and improved its scalability by using advanced state management tool, Redux',
-//             'Used relational database management systems, PostgreSQL, together with Node.js and Express framework to design a RESTful Web API and to build the entire database',
-//             'Created log in, sign up, class form, along with form validations using yup',
-//             'Deployed successfully front end with Vercel and backend with Heroku'
-//         ]
-//     },
-//     {
-//         name: 'Potluck Planner',
-//         time: '09/2021',
-//         code: 'https://github.com/Build-Week-Potluck-Planner-4',
-//         site: '',
-//         overview: 'A group project resulted in a web page that allows logged in users to create potlucks and invite guests, and logged in guests can choose to accept or refuse',
-//         details: [
-//             'Utilized State Hook and Redux to store data locally and globally, ensuring the dynamic aspect of the page',
-//             'Efficiently made the codes DRY by using custom hook useForm and shared Components, and easy to debug by breaking into small different components'
-//         ]
-//     },
-//     {
-//         name: 'Pet Adoptions',
-//         time: '09/2021',
-//         code: 'https://github.com/pets-adopt',
-//         site: 'https://pets-adopt.vercel.app/',
-//         overview: 'An individually built web page providing pet adoption services ● Ensured Responsive Web Design by using Media Queries',
-//         details: [
-//             'Improved designs with advanced CSS (Flexbox, cdnjs libraries, shadows, transitions)',
-//         ]
-//     },
-// ]
-
 export const work = [
     {
         position: 'Accounting & Tax Intern',

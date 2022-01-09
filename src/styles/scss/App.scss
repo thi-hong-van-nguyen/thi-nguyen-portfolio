@@ -303,10 +303,12 @@ main {
 .portfolio-section__container,
 .top-section__container,
 .bottom-section {
-    max-width: 85%;
+    width: 85%;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 2% 0;
     // border:solid red 1px;
+
 }
 
 ///////////////////////////////////////////////////////////
