@@ -11,8 +11,15 @@ $dot-color: rgba(124, 124, 124, 1);
 ////////////////////////////////////////////////////////////////////////
 .resume-wrapper {
     .top-section {
-
         animation: top-ani 1s ease-in-out;
+    }
+
+    .bottom-section {
+        .resume {
+            box-shadow: -10px 10px 10px rgba(85, 84, 84, 0.1);
+
+        }
+
     }
 
     .top-section-light-mode {

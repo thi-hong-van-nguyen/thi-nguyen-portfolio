@@ -2,6 +2,7 @@
 @import 'home';
 @import 'portfolio';
 @import 'resume';
+@import 'contact';
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Prompt:ital,wght@0,300;0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,700&display=swap');
 
 * {
@@ -50,6 +51,46 @@ a:link {
         margin-left: 0;
     }
 }
+
+///////////////////////////////////////////////////////////////
+//////////////////      KEYFRAMES      ////////////////////////
+///////////////////////////////////////////////////////////////
+
+@keyframes showup {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+
+}
+
+@keyframes float {
+	0% {
+		box-shadow: 0 5px 15px 0px rgba(100, 100, 100, 0.6);
+		transform: translatey(0px);
+	}
+	50% {
+		box-shadow: 0 25px 15px 0px rgba(100, 100, 100,0.2);
+		transform: translatey(-20px);
+	}
+	100% {
+		box-shadow: 0 5px 15px 0px rgba(100, 100, 100,0.6);
+		transform: translatey(0px);
+	}
+}
+
+
+@keyframes glow {
+    from {
+      text-shadow: 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #367a5d, 0 0 25px #367a5d, 0 0 30px #367a5d, 0 0 35px #367a5d, 0 0 40px #367a5d;
+    }
+
+    to {
+      text-shadow: 0 0 15px #fff, 0 0 20px #57cc99, 0 0 25px #57cc99, 0 0 30px #57cc99, 0 0 35px #57cc99, 0 0 40px #57cc99, 0 0 45px #57cc99;
+    }
+};
 
 ///////////////////////////////////////////////////////////
 ////////////////////         HEADER         ///////////////
@@ -265,15 +306,6 @@ header {
     }
 };
 
-@keyframes glow {
-    from {
-      text-shadow: 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #367a5d, 0 0 25px #367a5d, 0 0 30px #367a5d, 0 0 35px #367a5d, 0 0 40px #367a5d;
-    }
-
-    to {
-      text-shadow: 0 0 15px #fff, 0 0 20px #57cc99, 0 0 25px #57cc99, 0 0 30px #57cc99, 0 0 35px #57cc99, 0 0 40px #57cc99, 0 0 45px #57cc99;
-    }
-};
 
 ///////////////////////////////////////////////////////////
 ////////////////////           MAIN         ///////////////
@@ -289,7 +321,9 @@ main {
 .intro-section,
 .portfolio-section,
 .top-section,
-.bottom-section {
+.bottom-section,
+.contact-me-top-section,
+.contact-me-bottom-section {
     width: 100%;
     overflow: hidden;
     border-bottom: solid 1px rgba(105, 105, 105, 0.3);
@@ -302,12 +336,13 @@ main {
 .intro-section__container,
 .portfolio-section__container,
 .top-section__container,
-.bottom-section {
+.bottom-section,
+.contact-me-top-section__container,
+.contact-me-bottom-section__container {
     width: 85%;
     max-width: 1200px;
     margin: 0 auto;
     padding: 2% 0;
-    // border:solid red 1px;
 
 }
 

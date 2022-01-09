@@ -1,0 +1,143 @@
+/////////////////////////////////////////////////////////////////////////
+//////////////////////////   TOP     ////////////////////////////////
+////////////////////////////////////////////////////////////////////////
+.contact-me-top-section-light-mode {
+    background: $light-mode-top-section-bg;
+}
+
+.contact-me {
+    text-align: center;
+
+    div {
+        padding: 15px 0 0 0;
+        line-height: 30px;
+        a {
+            color: $dark-mode-primary-color;
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+}
+
+/////////////////////////////////////////////////////////////////////////
+//////////////////////////   BOTTOM     ////////////////////////////////
+/////////////////////////////////////////////////////////////////////////
+
+.contact-me-bottom-section__container {
+    text-align: center;
+    @include flex-col;
+    width: 100%;
+
+    .cat-video {
+        padding: 20px;
+
+        video {
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: map-get($border-radius, image);
+            animation: float 6s ease-in-out infinite;
+        }
+    }
+
+    .cm-form {
+        max-width: 550px;
+        width: 60%;
+        text-align: center;
+
+        &__row {
+            border: rgb(136, 131, 131) solid 1px;
+            border-radius: map-get($border-radius, btn);
+            box-shadow: -1px 1px 1px 1px rgba(126, 123, 123, 0.3);
+            margin: 10px;
+            @include flex-row;
+            align-items: center;
+            padding: 10px;
+
+            label {
+                padding: 10px 0 0 8px;
+            }
+
+            input, textarea {
+                width: 80%;
+            }
+
+            textarea {
+                height: 200px;
+            }
+        }
+
+        &__btn {
+            border: none;
+            box-shadow: none;
+            @include flex-col;
+
+            button {
+                width: 100px;
+                margin: 10px;
+                &:focus {
+                    box-shadow: $project-card-box-shadow;
+                }
+            }
+        }
+
+        .row--light-mode {
+            background: $light-mode-card-bg;
+            border: $light-mode-card-box-shadow;
+        }
+    }
+
+    .message {
+        height: 20px;
+
+        &__error {
+            color: red;
+            font-size: map-get($font-size, small);
+        }
+
+        &__success {
+            color: $dark-mode-primary-color;
+        }
+    }
+}
+
+@media (max-width: 1425px) {
+    .contact-me-bottom-section__container {
+        .cm-form {
+            width: 550px;
+        }
+    }
+}
+
+@include large-tablet {
+    .contact-me-bottom-section__container {
+        .cm-form {
+            width: 80%;
+        }
+    }
+}
+
+@include mobile {
+    .contact-me-bottom-section__container {
+        .cm-form {
+            width: 380px;
+
+            &__row {
+                @include flex-col;
+                align-items: center;
+                padding: 20px;
+                margin: 0;
+
+                label {
+                    padding: 0;
+                }
+
+                input, textarea {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+

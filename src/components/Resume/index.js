@@ -97,7 +97,7 @@ function Resume(props) {
                                         <div className='education__content'>
                                             {education.map(edu => {
                                                 return (
-                                                    <div className='school resume-item-card'>
+                                                    <div key={edu.school} className='school resume-item-card'>
                                                         <h4>
                                                             {edu.major}
                                                         </h4>
