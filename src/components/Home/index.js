@@ -149,7 +149,12 @@ function Home(props) {
                         </div>
                     </div>
                     <div className='testimonials'>
-                        <Carousel breakPoints={breakPoints} enableInfiniteLoop enableAutoPlay>
+                        <Carousel
+                            breakPoints={breakPoints}
+                            enableInfiniteLoop
+                            enableAutoPlay
+                            autoPlaySpeed={5000}
+                        >
                             {testimonials.map((t, idx) => {
                                 return (
                                     <div
