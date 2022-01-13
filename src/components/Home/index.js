@@ -42,7 +42,7 @@ function Home(props) {
                         <h2>Thi Nguyen</h2>
                         <h3>Full Stack Web Developer</h3>
                         <div>
-                            I'm a web developer specialized in both front end and back end for modern web apps. Want to know about my project? Check out my <Link to='/portfolio'>portfolio</Link> and <Link to='/resume'>online resume</Link>
+                            I'm a full-stack web developer specialized in developing the front & back end of modern progressive web apps. Want to see some of my work? Check out my <Link to='/portfolio'>portfolio</Link> and <Link to='/resume'>online resume</Link>
                         </div>
                         <div>
                             <button
