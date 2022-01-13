@@ -12,6 +12,40 @@ $dot-color: rgba(124, 124, 124, 1);
 .resume-wrapper {
     .top-section {
         animation: top-ani 1s ease-in-out;
+        height: 100%;
+
+        &__container {
+            width: 100%;
+
+            .resume-content {
+                .download {
+                    width: 100%;
+                    text-align: center;
+                    margin: 30px 0 20px 0;
+                    button {
+                        @include flex-row;
+                        margin: 0 auto;
+                        width: 160px;
+                        align-items: center;
+                        i {
+                            font-size: 1.5rem;
+                        }
+                        a {
+                            color: set-text-color($dark-mode-bg);
+                        }
+                    }
+
+                    // .download-img {
+                    //     background-image: url('../../photos/downloadPDF.png');
+                    //     background-size: cover;
+                    //     width: 250px;
+                    //     height: 100px;
+                    //     object-fit: cover;
+                    //     margin: auto;
+                    // }
+                }
+            }
+        }
     }
 
     .bottom-section {

@@ -71,6 +71,7 @@
 
 .about-me-section__container .bio .btn {
   margin-right: 40px;
+  width: 160px;
 }
 
 .about-me-section__container .bio .btn:hover {
@@ -992,6 +993,43 @@
 .resume-wrapper .top-section {
   -webkit-animation: top-ani 1s ease-in-out;
           animation: top-ani 1s ease-in-out;
+  height: 100%;
+}
+
+.resume-wrapper .top-section__container {
+  width: 100%;
+}
+
+.resume-wrapper .top-section__container .resume-content .download {
+  width: 100%;
+  text-align: center;
+  margin: 30px 0 20px 0;
+}
+
+.resume-wrapper .top-section__container .resume-content .download button {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  margin: 0 auto;
+  width: 160px;
+  align-items: center;
+}
+
+.resume-wrapper .top-section__container .resume-content .download button i {
+  font-size: 1.5rem;
+}
+
+.resume-wrapper .top-section__container .resume-content .download button a {
+  color: #ece9e9;
 }
 
 .resume-wrapper .bottom-section .resume {
@@ -1863,8 +1901,8 @@ a:link {
 }
 
 .btn:hover {
-  background: #066d55;
-  border: solid 1px #066d55;
+  background: #098b6d;
+  border: solid 1px #098b6d;
 }
 
 .dark-mode {

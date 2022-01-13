@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
 import { getActiveKey } from '../../redux/actions'
 import bio3 from '../../photos/bio3.jpg'
+import Download from './Download'
 import { projects, skills, work, education } from '../../data'
 
 function Resume(props) {
@@ -18,7 +19,7 @@ function Resume(props) {
                 <div className='top-section__container'>
                     <div className='resume-content'>
                         <h2>Online Resume</h2>
-                        <div>download</div>
+                        <Download />
                     </div>
                 </div>
             </section>
