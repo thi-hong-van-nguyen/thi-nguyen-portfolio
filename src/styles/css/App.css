@@ -102,8 +102,8 @@
   height: 300px;
   -o-object-fit: cover;
      object-fit: cover;
-  -o-object-position: 50% 20%;
-     object-position: 50% 20%;
+  -o-object-position: 50% 50%;
+     object-position: 50% 50%;
   -webkit-box-shadow: 0 5px 10px rgba(68, 71, 85, 0.4);
           box-shadow: 0 5px 10px rgba(68, 71, 85, 0.4);
 }
