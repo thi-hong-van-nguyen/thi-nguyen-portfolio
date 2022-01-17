@@ -14,6 +14,8 @@ import antdesign from '../../photos/antdesign.png'
 import postgresql from '../../photos/postgresql.svg'
 import sqlite from '../../photos/sqlite.svg'
 import study from '../../photos/study.svg'
+import MU from '../../photos/MU.svg'
+import mongodb from '../../photos/mongodb.jpg'
 import bio4 from '../../photos/bio4.jpg'
 import { getActiveKey } from '../../redux/actions'
 import { testimonials, projects } from '../../data'
@@ -88,7 +90,7 @@ function Home(props) {
                                 <img src={html} alt='html icon' />
                                 <img src={css} alt='css icon' className='css' />
                             </div>
-                            <h3>HTML & CSS</h3>
+                            <h3>HTML <small>&</small> CSS</h3>
                             <p>HTML and CSS are the very basic skills that I learned at Bloom Tech. I was amazed when I first saw the output in the console and in the browser even with only few basic codes.</p>
                         </div>
                         <div className='skill'>
@@ -101,9 +103,10 @@ function Home(props) {
                         <div className='skill'>
                             <div className='skill__icon'>
                                 <img src={sass} alt='SASS icon' />
+                                <img src={MU} alt='Material UI icon' />
                                 <img src={antdesign} alt='Ant Design icon' />
                             </div>
-                            <h3>SASS & Ant Design</h3>
+                            <h3>SASS <small>,</small> Material UI <small>&</small> Ant Design</h3>
                             <p>Along with basic CSS, SASS and Ant Design help my design more attractive, professional and more maintainable.</p>
                         </div>
                         <div className='skill'>
@@ -111,7 +114,7 @@ function Home(props) {
                                 <img src={react} alt='React icon' />
                             </div>
                             <h3>React</h3>
-                            <p>I love building web apps with React! React is easy to use and have tons of open sources that can assist me in the web building process. React is known as a remarkably flexible JavaScript Library which can be used on a vast variety of platforms to build high quality User Interfaces</p>
+                            <p>I love React! React is known as a remarkably flexible JavaScript Library which can be used on a vast variety of platforms to build high quality User Interfaces</p>
                         </div>
                         <div className='skill'>
                             <div className='skill__icon'>
@@ -123,10 +126,11 @@ function Home(props) {
                         <div className='skill'>
                             <div className='skill__icon'>
                                 <img src={postgresql} alt='postgresql icon' />
-                                <img src={sqlite} alt='postgresql icon' />
+                                <img src={mongodb} alt='postgresql icon' />
+                                <img src={sqlite} alt='postgresql icon' className='sqlite' />
                             </div>
-                            <h3>PostgreSQL & SQLite</h3>
-                            <p>SQLite is my favorite relational database management system to build DB using Node JS because of its simplicity yet efficiency. I, however, did not stop there but have been continuously learning new software, and PostgreSQL is the first.</p>
+                            <h3>PostgreSQL <small>,</small> MongoDB <small>,</small> SQLite</h3>
+                            <p>It's a good thing to know different types of relational database management system. PostgeSQL. SQLite and MongoDB are the first, and more to go.</p>
                         </div>
                         <div className='skill'>
                             <div className='skill__icon'>

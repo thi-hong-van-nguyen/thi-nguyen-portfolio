@@ -210,7 +210,12 @@
 .skills-section__container .skill img {
   width: 30px;
   height: 30px;
-  margin-right: 5px;
+  margin-right: 8px;
+}
+
+.skills-section__container .skill .sqlite {
+  background: #e4e0e0;
+  border-radius: 5px;
 }
 
 .skills-section__container .skill .css {
