@@ -126,11 +126,11 @@ function Home(props) {
                         <div className='skill'>
                             <div className='skill__icon'>
                                 <img src={postgresql} alt='postgresql icon' />
-                                <img src={mongodb} alt='postgresql icon' />
                                 <img src={sqlite} alt='postgresql icon' className='sqlite' />
+                                <img src={mongodb} alt='postgresql icon' />
                             </div>
-                            <h3>PostgreSQL <small>,</small> MongoDB <small>,</small> SQLite</h3>
-                            <p>It's a good thing to know different types of relational database management system. PostgeSQL. SQLite and MongoDB are the first, and more to go.</p>
+                            <h3>PostgreSQL <small>,</small> SQLite <small>,</small> MongoDB</h3>
+                            <p>It's a good thing to know both relational and document-oriented database management system. PostgeSQL. SQLite and MongoDB are the first, and more to go!</p>
                         </div>
                         <div className='skill'>
                             <div className='skill__icon'>
