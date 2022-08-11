@@ -1,55 +1,75 @@
-@import 'config';
-@import 'home';
-@import 'portfolio';
-@import 'resume';
-@import 'contact';
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Prompt:ital,wght@0,300;0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,700&display=swap');
+@import "config";
+@import "home";
+@import "portfolio";
+@import "resume";
+@import "contact";
+
+::-webkit-scrollbar {
+	width: 5px;
+	height: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.3);
+	background-color: #c4c4c4;
+}
+
+::-webkit-scrollbar-track {
+	margin: 5px;
+}
+
+::-webkit-scrollbar-button {
+	height: 12px;
+}
 
 * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    font-family: 'Roboto', sans-serif;
-    font-weight: map-get($font-weight , regular );
-};
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	font-weight: map-get($font-weight, regular);
+}
 
-h1, h2, h3 {
-    font-weight: bold;
-};
+h1,
+h2,
+h3 {
+	font-weight: bold;
+}
 
 a:link {
-    text-decoration: none;
+	text-decoration: none;
 }
 
 .btn {
-    margin: 5% 0;
-    text-transform: capitalize;
-    background: $dark-mode-primary-color;
-    border: solid 1px $dark-mode-primary-color;
-    i {
-        padding-right: 10px;
-    }
-    &:hover {
-        background: $dark-mode-button-hover-color;
-        border: solid 1px $dark-mode-button-hover-color;;
-    }
+	margin: 5% 0;
+	text-transform: capitalize;
+	background: $dark-mode-primary-color;
+	border: solid 1px $dark-mode-primary-color;
+	i {
+		padding-right: 10px;
+	}
+	&:hover {
+		background: $dark-mode-button-hover-color;
+		border: solid 1px $dark-mode-button-hover-color;
+	}
 }
 
 .dark-mode {
-    background: $dark-mode-bg;
-    color: set-text-color($dark-mode-bg);
+	background: $dark-mode-bg;
+	color: set-text-color($dark-mode-bg);
 }
 
 .light-mode {
-    background: $light-mode-bg;
-    color: set-text-color($light-mode-bg);
+	background: $light-mode-bg;
+	color: set-text-color($light-mode-bg);
 }
 
-.main-wrapper, footer {
-    margin-left: 280px;
-    @include large-tablet {
-        margin-left: 0;
-    }
+.main-wrapper,
+footer {
+	margin-left: 280px;
+	@include large-tablet {
+		margin-left: 0;
+	}
 }
 
 ///////////////////////////////////////////////////////////////
@@ -57,13 +77,12 @@ a:link {
 ///////////////////////////////////////////////////////////////
 
 @keyframes showup {
-    0% {
-        transform: scale(0);
-    }
-    100% {
-        transform: scale(1);
-    }
-
+	0% {
+		transform: scale(0);
+	}
+	100% {
+		transform: scale(1);
+	}
 }
 
 @keyframes float {
@@ -72,248 +91,254 @@ a:link {
 		transform: translatey(0px);
 	}
 	50% {
-		box-shadow: 0 25px 15px 0px rgba(100, 100, 100,0.2);
+		box-shadow: 0 25px 15px 0px rgba(100, 100, 100, 0.2);
 		transform: translatey(-20px);
 	}
 	100% {
-		box-shadow: 0 5px 15px 0px rgba(100, 100, 100,0.6);
+		box-shadow: 0 5px 15px 0px rgba(100, 100, 100, 0.6);
 		transform: translatey(0px);
 	}
 }
 
-
 @keyframes glow {
-    from {
-      text-shadow: 0 0 10px rgb(223, 221, 221), 0 0 15px rgb(223, 221, 221), 0 0 20px #2b5e48, 0 0 25px #2b5e48, 0 0 30px #2b5e48, 0 0 35px #2b5e48, 0 0 40px #2b5e48;
-    }
+	from {
+		text-shadow: 0 0 10px rgb(223, 221, 221), 0 0 15px rgb(223, 221, 221),
+			0 0 20px #2b5e48, 0 0 25px #2b5e48, 0 0 30px #2b5e48,
+			0 0 35px #2b5e48, 0 0 40px #2b5e48;
+	}
 
-    to {
-      text-shadow: 0 0 15px rgb(223, 221, 221), 0 0 20px #48a77d, 0 0 25px #48a77d, 0 0 30px #48a77d, 0 0 35px #48a77d, 0 0 40px #48a77d, 0 0 45px #48a77d;
-    }
-};
+	to {
+		text-shadow: 0 0 15px rgb(223, 221, 221), 0 0 20px #48a77d,
+			0 0 25px #48a77d, 0 0 30px #48a77d, 0 0 35px #48a77d,
+			0 0 40px #48a77d, 0 0 45px #48a77d;
+	}
+}
 
 ///////////////////////////////////////////////////////////
 ////////////////////         HEADER         ///////////////
 ///////////////////////////////////////////////////////////
 
 header {
-    background: $dark-mode-header-bg;
-    z-index: 99;
-    width: 280px;
-    position: fixed;
-    height: 100%;
-    text-align: center;
-    padding: 30px 20px;
-    color: set-text-color($dark-mode-bg);
+	background: $dark-mode-header-bg;
+	z-index: 99;
+	width: 280px;
+	position: fixed;
+	height: 100vh;
+	overflow-x: hidden;
+	overflow-y: scroll;
+	text-align: center;
+	padding: 30px 20px;
+	color: set-text-color($dark-mode-bg);
 
-    @include large-tablet {
-        position: static;
-        width: 100%;
-    }
+	@include large-tablet {
+		position: static;
+		width: 100%;
+		height: 100%;
+		overflow-y: hidden;
+	}
 }
 
 .header__light {
-    background: $light-mode-header-bg !important;
+	background: $light-mode-header-bg !important;
 }
 
 .fa-bars {
-    font-size: 1.5rem;
-    transform:scale(1.5,1.2);
-    border: solid 1px #fff;
-    padding: 7px 10px;
-    position: absolute;
-    top: 30px;
-    left: 30px;
-    visibility: hidden;
+	font-size: 1.5rem;
+	transform: scale(1.5, 1.2);
+	border: solid 1px #fff;
+	padding: 7px 10px;
+	position: absolute;
+	top: 30px;
+	left: 30px;
+	visibility: hidden;
 
-    @include large-tablet {
-        visibility: visible;
-    }
+	@include large-tablet {
+		visibility: visible;
+	}
 }
 
 .menu {
-    &__name {
-        h1 {
-            // color: rgb(214, 206, 206);
-            animation: glow 1s ease-in-out infinite alternate;
-        };
-    }
+	&__name {
+		h1 {
+			animation: glow 1s ease-in-out infinite alternate;
+		}
+	}
 
-    &__intro {
-        &--img {
-            padding: 12px 0;
-            img {
-                width: 160px;
-                height: 160px;
-                object-fit: cover;
-                border-radius: map-get($border-radius, 'image');
-                object-position: 50% 30%;
-            }
-        };
+	&__intro {
+		&--img {
+			padding: 12px 0;
+			img {
+				width: 160px;
+				height: 160px;
+				object-fit: cover;
+				border-radius: map-get($border-radius, "image");
+				object-position: 50% 30%;
+			}
+		}
 
-        &--links {
-            padding: 20px 0;
-            a {
-                padding: 5px;
-                i {
-                    color: $dark-mode-primary-color;
-                    &:hover {
-                        color: set-text-color($dark-mode-bg);
-                        @include transition-ease;
-                        transform: scale(1.2);
-                    }
-                };
-                .light {
-                    color: set-text-color($dark-mode-bg) !important;
-                }
-            }
-        };
-    }
+		&--links {
+			padding: 20px 0;
+			a {
+				padding: 5px;
+				i {
+					color: $dark-mode-primary-color;
+					&:hover {
+						color: set-text-color($dark-mode-bg);
+						@include transition-ease;
+						transform: scale(1.2);
+					}
+				}
+				.light {
+					color: set-text-color($dark-mode-bg) !important;
+				}
+			}
+		}
+	}
 
-    &__nav-bar {
-        border-top: solid rgba(255, 255, 255, 0.5) 1px;
-        border-bottom: solid rgba(255, 255, 255, 0.5) 1px;
-        padding: 5%;
+	&__nav-bar {
+		border-top: solid rgba(255, 255, 255, 0.5) 1px;
+		border-bottom: solid rgba(255, 255, 255, 0.5) 1px;
+		padding: 5%;
 
-        &--links {
-            @include flex-row;
-            padding: 0 0 0 5%;
-            a {
-                color: #d3d3d3;
-                text-transform: capitalize;
-                padding: 3%;
-                font-weight: map-get($font-weight, 'bold');
-                font-size: 1.1rem;
-                letter-spacing: 1.5px;
-                i{
-                    width: 40px;
-                };
-                &:hover {
-                    color: set-text-color($dark-mode-bg);
-                    @include transition-ease;
-                    text-shadow: 0 0 15px #fff, 0 0 20px #367a5d, 0 0 25px #367a5d, 0 0 30px #367a5d, 0 0 35px #367a5d, 0 0 40px #367a5d, 0 0 45px #367a5d;
-                };
-            };
-            .light {
-                color: $dark-green;
-            }
-            .dark {
-                color: $dark-mode-primary-color;
-            }
-        }
+		&--links {
+			@include flex-row;
+			padding: 0 0 0 5%;
+			a {
+				color: #d3d3d3;
+				text-transform: capitalize;
+				padding: 3%;
+				font-weight: map-get($font-weight, "bold");
+				font-size: 1.1rem;
+				letter-spacing: 1.5px;
+				i {
+					width: 40px;
+				}
+				&:hover {
+					color: set-text-color($dark-mode-bg);
+					@include transition-ease;
+					text-shadow: 0 0 15px #fff, 0 0 20px #367a5d,
+						0 0 25px #367a5d, 0 0 30px #367a5d, 0 0 35px #367a5d,
+						0 0 40px #367a5d, 0 0 45px #367a5d;
+				}
+			}
+			.light {
+				color: $dark-green;
+			}
+			.dark {
+				color: $dark-mode-primary-color;
+			}
+		}
 
-        .hiremeBtn-light {
-            background: $dark-green !important;
-        };
+		.hiremeBtn-light {
+			background: $dark-green !important;
+		}
 
-        @include large-tablet {
-            padding: 0;
-            &--links {
-                padding: 0 8%;
-                a {
-                    padding: 2% 0 0 0;
-                };
-            };
-            button {
-                margin: 2%;
-                width: 80%;
-            };
-        };
+		@include large-tablet {
+			padding: 0;
+			&--links {
+				padding: 0 8%;
+				a {
+					padding: 2% 0 0 0;
+				}
+			}
+			button {
+				margin: 2%;
+				width: 80%;
+			}
+		}
 
-        @include mobile {
-            &--links {
-                @include flex-col;
-                align-items: flex-start;
-                padding: 3% 5%;
-            };
-        };
-    };
+		@include mobile {
+			&--links {
+				@include flex-col;
+				align-items: flex-start;
+				padding: 3% 5%;
+			}
+		}
+	}
 
-    &__dark-mode {
-        @include flex-col;
-        .dark-mode-text {
-            margin: 10px 0;
-        };
+	&__dark-mode {
+		@include flex-col;
+		.dark-mode-text {
+			margin: 10px 0;
+		}
 
-        .dark-mode-icon {
-            width: 50px;
-            height: 28px;
-            border: solid 2px $dark-mode-primary-color;
-        };
+		.dark-mode-icon {
+			width: 50px;
+			height: 28px;
+			border: solid 2px $dark-mode-primary-color;
+		}
 
-        .dark-mode-icon {
-            width: 50px;
-            height: 28px;
-            border-radius: map-get($border-radius, 'dark-mode-icon');
-            border: solid 2px $dark-mode-primary-color;
-            position: relative;
-            margin-top: 5px;
-            cursor: pointer;
+		.dark-mode-icon {
+			width: 50px;
+			height: 28px;
+			border-radius: map-get($border-radius, "dark-mode-icon");
+			border: solid 2px $dark-mode-primary-color;
+			position: relative;
+			margin-top: 5px;
+			cursor: pointer;
 
-            &::after {
-                content: '';
-                width: 50%;
-                height: 80%;
-                display: block;
-                position: relative;
-                background: $dark-mode-primary-color;
-                left: 46%;
-                top: 10%;
-                border-radius: 65px;
-                transition: 0.3s;
-            };
-        };
+			&::after {
+				content: "";
+				width: 50%;
+				height: 80%;
+				display: block;
+				position: relative;
+				background: $dark-mode-primary-color;
+				left: 46%;
+				top: 9%;
+				border-radius: 65px;
+				transition: 0.3s;
+			}
+		}
 
-        .light {
-            border: solid 2px #fff !important;
-            &::after {
-                left: 5% !important;
-                background: #026b52 !important;
-            };
-        };
+		.light {
+			border: solid 2px #fff !important;
+			&::after {
+				left: 5% !important;
+				background: #026b52 !important;
+			}
+		}
+	}
 
-    };
+	@include large-tablet {
+		&__name {
+			height: 40px;
+		}
 
-    @include large-tablet {
-        &__name {
-            height: 40px;
-        }
+		.sections-wrapper {
+			opacity: 0;
+			height: 0;
+			transition: height 0.2s ease;
+		}
+		.menu-hidden {
+			opacity: 0;
+			height: 1px;
+			transition: height 0.2s ease;
+		}
+		.menu-display {
+			opacity: 1;
+			height: 500px;
+			padding-top: 10px;
+		}
+	}
 
-        .sections-wrapper {
-            opacity: 0;
-            height: 0;
-            transition:  height 0.2s ease;
-        };
-        .menu-hidden {
-            opacity: 0;
-            height: 1px;
-            transition:  height 0.2s ease;
-        };
-        .menu-display {
-            opacity: 1;
-            height: 500px;
-            padding-top: 10px;
-        };
-    };
+	@include mobile {
+		.menu-display {
+			height: 320px;
+		}
 
-    @include mobile {
-        .menu-display {
-            height: 320px;
-        }
-
-        &__intro {
-            display: none;
-        }
-    }
-};
-
+		&__intro {
+			display: none;
+		}
+	}
+}
 
 ///////////////////////////////////////////////////////////
 ////////////////////           MAIN         ///////////////
 ///////////////////////////////////////////////////////////
 main {
-    width: 100%;
-};
+	width: 100%;
+}
 
 .about-me-section,
 .skills-section,
@@ -325,9 +350,9 @@ main {
 .bottom-section,
 .contact-me-top-section,
 .contact-me-bottom-section {
-    width: 100%;
-    overflow: hidden;
-    border-bottom: solid 1px rgba(105, 105, 105, 0.3);
+	width: 100%;
+	overflow: hidden;
+	border-bottom: solid 1px rgba(105, 105, 105, 0.3);
 }
 
 .about-me-section__container,
@@ -340,11 +365,10 @@ main {
 .bottom-section,
 .contact-me-top-section__container,
 .contact-me-bottom-section__container {
-    width: 85%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 2% 0;
-
+	width: 85%;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 2% 0;
 }
 
 ///////////////////////////////////////////////////////////
@@ -352,14 +376,14 @@ main {
 ///////////////////////////////////////////////////////////
 
 footer {
-    margin: 3% 0 0 0;
-    div {
-        text-align: center;
-        padding-bottom: 8px;
-        text-transform: capitalize;
-        font-size: map-get($font-size, small);
-        i {
-            color: $dark-mode-primary-color;
-        }
-    }
+	margin: 3% 0 0 0;
+	div {
+		text-align: center;
+		padding-bottom: 8px;
+		text-transform: capitalize;
+		font-size: map-get($font-size, small);
+		i {
+			color: $dark-mode-primary-color;
+		}
+	}
 }

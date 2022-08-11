@@ -1,4 +1,3 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Prompt:ital,wght@0,300;0,400;0,700;1,400;1,700&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,700&display=swap");
 .intro {
   position: relative;
 }
@@ -1877,16 +1876,37 @@
   }
 }
 
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  -webkit-box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.3);
+          box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.3);
+  background-color: #c4c4c4;
+}
+
+::-webkit-scrollbar-track {
+  margin: 5px;
+}
+
+::-webkit-scrollbar-button {
+  height: 12px;
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   padding: 0;
   margin: 0;
-  font-family: 'Roboto', sans-serif;
   font-weight: 400;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
   font-weight: bold;
 }
 
@@ -1920,12 +1940,14 @@ a:link {
   color: #131212;
 }
 
-.main-wrapper, footer {
+.main-wrapper,
+footer {
   margin-left: 280px;
 }
 
 @media (max-width: 990px) {
-  .main-wrapper, footer {
+  .main-wrapper,
+  footer {
     margin-left: 0;
   }
 }
@@ -2017,7 +2039,9 @@ header {
   z-index: 99;
   width: 280px;
   position: fixed;
-  height: 100%;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: scroll;
   text-align: center;
   padding: 30px 20px;
   color: #ece9e9;
@@ -2027,6 +2051,8 @@ header {
   header {
     position: static;
     width: 100%;
+    height: 100%;
+    overflow-y: hidden;
   }
 }
 
@@ -2134,7 +2160,7 @@ header {
   color: #ece9e9;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
-  text-shadow: 0 0 15px #fff, 0 0 20px #367a5d, 0 0 25px #367a5d, 0 0 30px #367a5d, 0 0 35px #367a5d, 0 0 40px #367a5d, 0 0 45px #367a5d;
+  text-shadow: 0 0 15px #fff, 0 0 20px #367a5d, 0 0 25px #367a5d, 0 0 30px #367a5d, 0 0 35px #367a5d, 0 0 40px #367a5d, 0 0 45px #367a5d;
 }
 
 .menu__nav-bar--links .light {
@@ -2226,14 +2252,14 @@ header {
 }
 
 .menu__dark-mode .dark-mode-icon::after {
-  content: '';
+  content: "";
   width: 50%;
   height: 80%;
   display: block;
   position: relative;
   background: #06ac85;
   left: 46%;
-  top: 10%;
+  top: 9%;
   border-radius: 65px;
   -webkit-transition: 0.3s;
   transition: 0.3s;
