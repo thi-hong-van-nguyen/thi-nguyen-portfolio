@@ -50,7 +50,7 @@ function Resume(props) {
 											<i className="fas fa-envelope"></i>
 											<a
 												target="_blank"
-												rel="noopener-noreferrer"
+												rel="noopener noreferrer"
 												href="mailto:thinguyen.webdev@gmail.com"
 											>
 												thinguyen.webdev@gmail.com
@@ -60,7 +60,7 @@ function Resume(props) {
 											<i className="fas fa-phone-alt"></i>
 											<a
 												target="_blank"
-												rel="noopener-noreferrer"
+												rel="noopener noreferrer"
 												href="tel:408-912-3535"
 											>
 												408-912-3535
@@ -74,7 +74,7 @@ function Resume(props) {
 											<i className="fab fa-linkedin"></i>
 											<a
 												target="_blank"
-												rel="noopener-noreferrer"
+												rel="noopener noreferrer"
 												href="https://www.linkedin.com/in/thihongnguyen/"
 											>
 												linkedin.com/in/thihongnguyen/
@@ -84,7 +84,7 @@ function Resume(props) {
 											<i className="fab fa-github"></i>
 											<a
 												target="_blank"
-												rel="noopener-noreferrer"
+												rel="noopener noreferrer"
 												href="https://github.com/thi-hong-van-nguyen"
 											>
 												github.com/thi-hong-van-nguyen
