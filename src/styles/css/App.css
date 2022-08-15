@@ -1930,6 +1930,19 @@ a:link {
   border: solid 1px #098b6d;
 }
 
+.btn:focus {
+  outline: none !important;
+}
+
+.btn-primary {
+  background-color: #06ac85 !important;
+  border-color: #06ac85 !important;
+}
+
+.btn-primary:focus {
+  outline: none !important;
+}
+
 .dark-mode {
   background: #07121b;
   color: #ece9e9;

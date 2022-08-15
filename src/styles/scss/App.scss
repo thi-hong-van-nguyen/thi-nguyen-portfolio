@@ -52,6 +52,18 @@ a:link {
 		background: $dark-mode-button-hover-color;
 		border: solid 1px $dark-mode-button-hover-color;
 	}
+	&:focus {
+		outline: none !important;
+	}
+}
+
+.btn-primary {
+	background-color: $dark-mode-primary-color !important;
+	border-color: $dark-mode-primary-color !important;
+}
+
+.btn-primary:focus {
+	outline: none !important;
 }
 
 .dark-mode {
