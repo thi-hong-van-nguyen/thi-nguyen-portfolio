@@ -1,5 +1,5 @@
 import React from "react";
-import resume2 from "../../resume2.pdf";
+import resume from "../../resume.pdf";
 
 export default function Download() {
 	return (
@@ -7,7 +7,7 @@ export default function Download() {
 			<div className="download_">
 				<button type="button" className="btn btn-primary">
 					<i className="far fa-file-pdf"></i>
-					<a href={resume2} download="Thi_hong_van_nguyen_Resume">
+					<a href={resume} download="Thi_hong_van_nguyen_Resume">
 						Download PDF
 					</a>
 				</button>

@@ -180,6 +180,47 @@ function Resume(props) {
 									</div>
 								</div>
 								<div className="resume-content__bottom--right">
+									<div className="work-experience">
+										<h3>WORK EXPERIENCE</h3>
+										<div className="work-experience__content">
+											{work.map((job, idx) => {
+												return (
+													<div
+														key={idx}
+														className="job resume-item-card"
+													>
+														<div className="summary">
+															<h4>
+																{job.position},{" "}
+															</h4>
+															{job.company} |{" "}
+															{job.time}
+														</div>
+														<ul>
+															{job.details.map(
+																(
+																	detail,
+																	idx
+																) => {
+																	return (
+																		<li
+																			key={
+																				idx
+																			}
+																		>
+																			{
+																				detail
+																			}
+																		</li>
+																	);
+																}
+															)}
+														</ul>
+													</div>
+												);
+											})}
+										</div>
+									</div>
 									<div className="projects">
 										<h3>PROJECTS</h3>
 										<div className="projects__content">
@@ -243,47 +284,6 @@ function Resume(props) {
 																		>
 																			{
 																				point
-																			}
-																		</li>
-																	);
-																}
-															)}
-														</ul>
-													</div>
-												);
-											})}
-										</div>
-									</div>
-									<div className="work-experience">
-										<h3>WORK EXPERIENCE</h3>
-										<div className="work-experience__content">
-											{work.map((job, idx) => {
-												return (
-													<div
-														key={idx}
-														className="job resume-item-card"
-													>
-														<div className="summary">
-															<h4>
-																{job.position},{" "}
-															</h4>
-															{job.company} |{" "}
-															{job.time}
-														</div>
-														<ul>
-															{job.details.map(
-																(
-																	detail,
-																	idx
-																) => {
-																	return (
-																		<li
-																			key={
-																				idx
-																			}
-																		>
-																			{
-																				detail
 																			}
 																		</li>
 																	);

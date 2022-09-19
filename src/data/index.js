@@ -140,11 +140,14 @@ export const work = [
 		company: "Sikka Software Corporation",
 		time: "02/2022 - Present",
 		details: [
-			"Built client-side applications for two of company' new products from creating and setup GitHub repo, coding, debugging, maintaining the entire application",
-			"Met with potential clients to present the demo of the new products; received feedbacks and made improvement accordingly",
-			"Worked closely with the product manager, designer and backend engineers to create user stories and sprint on Jira for each period",
-			"Utilized libraries fluently to create dynamic data tables, charts; customized them to fit required functionalities",
-			"Implemented Redux to efficiently manage global states",
+			"Built the entire client-side web application for two of company’s new products including setting up Github repo, maintaining code base, documenting code standards and libraries used, designing, coding, and debugging the project based on defined specifications and Figma design",
+			"Met with potential clients to present demo of the new products; received feedbacks and improved the sites’ features accordingly",
+			"Collaborated with UX/UI designer to determine features, functionalities, user flow, and design of the application based on stakeholders’ requirements and goals; as well as with Back End Engineers to decide data structure, format, and other utilities of APIs in front end side",
+			"Integrated APIs received from Back End Engineers into client-side application",
+			"Implemented long polling technique to constantly and periodically fetch users’ production data; subscribed to changes of those data using Redux and React Hooks and applied to production charts and reports",
+			"Experienced in building dynamic and customized charts by frequently working with  a variety of chart libraries such as React-charts, Recharts js, Victory and Kendo charts",
+			"Installed MixPanel tracking users’ interactions with the application; generated reports to measure and analyze the success level of the application",
+			"Improved mobile user experience by making the application more responsive using Grid Systems, Media Queries and Bootstrap",
 		],
 	},
 	{
@@ -227,9 +230,9 @@ export const skills = [
 
 export const education = [
 	{
-		major: "BS, Information Technology",
+		major: "BS, Computer Science",
 		gpa: "4.00",
-		school: "Purdue Global University",
+		school: "Southern New Hampshire University",
 		time: "03/2022 - Present",
 	},
 	{
